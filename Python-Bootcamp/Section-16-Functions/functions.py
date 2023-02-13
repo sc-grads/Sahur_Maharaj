@@ -60,3 +60,5 @@ add(x=120, z=55)
 # return  --> ses functions to values
 n = len([1, 2, 4, 5])  # len retunrns value in len n
 
+# variable len args - *args
+
