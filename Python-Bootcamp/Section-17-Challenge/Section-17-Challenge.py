@@ -40,8 +40,24 @@ def fact(num):
 
 
 print(fact(4))
+
+
 # =====================================================================================================================
-# Challenge 1
+# Challenge 4
+def prime_no(numbers):
+    is_prime = True
+    itr = 1
+    while itr < numbers // 2:
+        itr += 1
+        if numbers % itr == 0:
+            is_prime = False
+            break
+        else:
+            is_prime = False
+    return is_prime
+
+
+print(prime_no(2))
 
 # =====================================================================================================================
 # Challenge 1
