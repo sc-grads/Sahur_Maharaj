@@ -316,5 +316,18 @@ l3 = set(l1) & set(l2)
 print(list(l3))
 # =====================================================================================================================
 # Challenge 14
+inval_car = '[]{}()$*'
+req_char = '@.'
+while True:
+    m_addr = input('Enter your email: ')
+    if len(m_addr) < 6 or len(m_addr) > 16:
+        print('Enter address with in the specified char amount (6 - 16): ')
+    elif not set(m_addr).isdisjoint(set(inval_car)):
+        print('Invlaid chars in email dont use: (){}[]$*')
+    elif set(req_char) & set(m_addr) != set(req_char):
+        print('Add req Chars .@')
+    else:
+        print('Valid Mail Address')
+        break
 
 # =====================================================================================================================
