@@ -1,2 +1,4 @@
 # Sahur_Maharaj
-Learning programming through Udemy.
+This repo contains all code, examples and challenges for:
+the 2023 Python-Bootcamp.
+
