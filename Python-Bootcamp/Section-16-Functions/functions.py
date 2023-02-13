@@ -7,3 +7,5 @@ def my_funct():
 # functions wont run unless called
 my_funct()  # <-- function called and will run
 
+# docstrings
+
