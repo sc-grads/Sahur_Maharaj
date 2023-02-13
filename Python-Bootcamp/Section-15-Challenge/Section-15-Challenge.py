@@ -281,12 +281,13 @@ c7_k = sorted(COUNTRY.keys())
 for key in c7_k:
     print(f'Key: {key}\t\tCountry: {COUNTRY[key]}')
 # =====================================================================================================================
-
-# Challenge 1
-
+# Challenge 8
+len_name = [len(v) for v in COUNTRY.values()]
+long_len = max(len_name)
+long_country = [contry for contry in COUNTRY.values() if len(contry) == long_len]
+print(long_country)
 # =====================================================================================================================
-
-# Challenge 1
+# Challenge 9
 
 # =====================================================================================================================
 
