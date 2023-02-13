@@ -80,4 +80,19 @@ def myfunc(**kwargs):
 myfunc(name='hi', age=32, student=True)
 
 
+# lambda expressions anony funcs
+# lambda param key func
+
+def add(a,b,c):
+    res = a + b + c
+    return res
+
+# lambda
+var = (lambda a, b, c: a + b + c)(3, 4, 5)
+print(var)
+
+powr_2 = (lambda x: x**2)
+print(powr_2(3))
+
+
 
