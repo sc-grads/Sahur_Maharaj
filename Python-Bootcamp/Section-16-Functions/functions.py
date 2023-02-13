@@ -60,5 +60,25 @@ add(x=120, z=55)
 # return  --> ses functions to values
 n = len([1, 2, 4, 5])  # len retunrns value in len n
 
-# variable len args - *args
+
+# variable len args - *args  <-- tuple of potential arguments
+def avg(a, b, *args):
+    print(f'Aargs are: {args}')
+    return (a + b) / (2 + len(args))
+
+
+print(avg(4, 5, 6, 7, 8, 9, 45, 2))
+
+
+# **kawargs dictionary of positional args
+def myfunc(**kwargs):
+    print(kwargs)
+    for k, v in kwargs.items():
+        print(f'key: {k}\nvalue: {v}')
+
+
+myfunc(name='hi', age=32, student=True)
+
+x = 1
+
 
