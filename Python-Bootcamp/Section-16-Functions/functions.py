@@ -79,6 +79,5 @@ def myfunc(**kwargs):
 
 myfunc(name='hi', age=32, student=True)
 
-x = 1
 
 
