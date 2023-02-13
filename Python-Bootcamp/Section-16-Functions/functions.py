@@ -44,3 +44,19 @@ def func1(x, y, z):  # <-- params local to function
 
 # func1(1, 555)  # <-- arguments
 func1(y=1, z=50, x=1023)  # keyword args
+
+
+# default args positionals must have default values afte
+def add(x, y=10, z=222):  # set def var for y
+
+    print(f'x is: {x}\ny is: {y}\nz is: {z}')
+    print(f'Sum: {x + y + z}')
+
+
+add(2, 4)
+
+add(x=120, z=55)
+
+# return  --> ses functions to values
+n = len([1, 2, 4, 5])  # len retunrns value in len n
+
