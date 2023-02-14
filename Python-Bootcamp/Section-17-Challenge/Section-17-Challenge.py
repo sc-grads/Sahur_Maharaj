@@ -97,6 +97,8 @@ def equi_ind(ind):
 
 find_ind = [-7, 1, 5, 2, -4, 3, 0]
 print(equi_ind(find_ind))
+
+
 # =====================================================================================================================
 # Challenge 8
 def eqi_indx(commastr):
@@ -107,8 +109,22 @@ def eqi_indx(commastr):
         if sum(numbs_lst[:i]) == sum(numbs_lst[i + 1:]):
             return i
     return False
+
+
 print(eqi_indx('-7,1,5,2,-4,3,0'))
+
+
 # =====================================================================================================================
 # Challenge 9
+def draw_tree(tree_size):
+    for h in range(1, tree_size + 1):
+        for w in range(tree_size - h):
+            print(' ', end='')
+        for s in range(2 * h - 1):
+            print('*', end='')
+        print()
+
+
+draw_tree(10)
 
 # =====================================================================================================================
