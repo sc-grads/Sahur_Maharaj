@@ -100,9 +100,15 @@ with open('txtfiles/american-english.txt') as f:
         print(f'{k} -> {v}')
 # =====================================================================================================================
 # Challenge 10
-
+with open('txtfiles/american-english.txt') as f:
+    words = f.read().splitlines()
+    words_and_length = dict()
+    for w in words:
+        words_and_length[w] = len(w)
+    words_list = sorted(words_and_length.items(), key=lambda x:x[1], reverse=True)
+    print(words_list[:100])
 # =====================================================================================================================
-# Challenge 1
+# Challenge 11
 # =====================================================================================================================
 # Challenge 1
 # =====================================================================================================================
