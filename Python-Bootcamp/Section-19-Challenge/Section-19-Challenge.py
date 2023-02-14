@@ -70,10 +70,12 @@ with open('txtfiles/banking.txt') as f:
     print(balance)
 # =====================================================================================================================
 # Challenge 8
-with open('txtfiles/f1.txt') as f:
+with open('txtfiles/f1.txt', 'a') as f:
+    f.write('well hello')
     file1 = f.read().splitlines()
 
-with open('txtfiles/f2.txt') as f:
+with open('txtfiles/f2.txt', 'a') as f:
+    f.write('hello python')
     file2 = f.read().splitlines()
 file = list(zip(file1, file2))
 
@@ -114,6 +116,16 @@ with open('txtfiles/american-english.txt') as words:
 print(letters)
 # =====================================================================================================================
 # Challenge 12
+letters = dict()
+for c in string.ascii_letters:
+    letters[c] = 0
+
+with open('txtfiles/american-english.txt') as words:
+    for w in words:
+        for char in string.ascii_letters:
+            letters[char] += w.lower().count(char)
+
+print(letters)
 # =====================================================================================================================
-# Challenge 1
+# Challenge 13
 # =====================================================================================================================
