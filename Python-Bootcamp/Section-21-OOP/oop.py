@@ -49,8 +49,17 @@ class Robot:
     def setEnergy(self, energy):
         self.energy = energy
 
+    def __str__(self):
+        my_str = f'I AM {self.name}'
+        return my_str
 
-r1 = Robot('Test', 2222)
+    def __add__(self, other):
+        year = self.year + other.year
+        return year
+
+
+r1 = Robot('R1', 2222)
+r2 = Robot('r2', 2211)
 print(r1.name, r1.year)
 print(r1.__doc__)
 print(r1.__dict__)
@@ -59,3 +68,9 @@ print(getattr(r1, 'energy'))
 print(Robot.total_bots)
 # destructor automaticlly called to free resources during an objects lifetime
 # python has a GC filnalizer
+
+
+# magic methods __method__
+print(r1)
+print(r1 + r2)
+
