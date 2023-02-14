@@ -18,8 +18,19 @@ with open('txtfiles/file.txt') as f:
 remove_space = [l for l in content_lst if l.strip() != '']
 with open('txtfiles/no_blanks.txt', 'a') as f:
     f.write(''.join(remove_space))
+
+
 # =====================================================================================================================
-# Challenge 1
+# Challenge 4
+def tail(file, e):
+    with open(file) as f:
+        content = f.read().splitlines()
+        end = content[len(content) - e:]
+        content_str = f'\n{end}'
+        return content_str
+
+
+print(tail('txtfiles/sample_filec4.txt', 5))
 # =====================================================================================================================
 # Challenge 1
 # =====================================================================================================================
