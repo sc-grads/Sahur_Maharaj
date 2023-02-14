@@ -26,7 +26,7 @@ x = 10
 while x <= 50:
     new_ninja.circle(x)
     ninja.circle(x + 5)
-    x += 25
+    x += 50
 
 my_screen.exitonclick()
 
@@ -36,23 +36,26 @@ my_screen.exitonclick()
 
 class Robot:
     """Class implements robot"""
+    total_bots = 0
 
-    def __int__(self, name, year):  # special called automatically
+    def __init__(self, name, year):  # special called automatically
         self.name = name  # <-- assign params to attributes
         self.year = year
+        Robot.total_bots += 1
 
     def __del__(self):
         print('Robot Destroyed')
 
-r1 = Robot()
-r1.name = 'hello'
-r1.year = 2022
+    def setEnergy(self, energy):
+        self.energy = energy
+
+
+r1 = Robot('Test', 2222)
 print(r1.name, r1.year)
 print(r1.__doc__)
 print(r1.__dict__)
-
+r1.setEnergy(500)
+print(getattr(r1, 'energy'))
+print(Robot.total_bots)
 # destructor automaticlly called to free resources during an objects lifetime
 # python has a GC filnalizer
-
-
-
