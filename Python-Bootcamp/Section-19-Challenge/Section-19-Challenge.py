@@ -1,5 +1,5 @@
 import time
-
+import string
 # Challenge 1
 with open('txtfiles/macs.txt') as f:
     content = f.read().split()
@@ -20,8 +20,6 @@ with open('txtfiles/file.txt') as f:
 remove_space = [l for l in content_lst if l.strip() != '']
 with open('txtfiles/no_blanks.txt', 'a') as f:
     f.write(''.join(remove_space))
-
-
 # =====================================================================================================================
 # Challenge 4
 def tail(file, e):
@@ -41,8 +39,6 @@ while True:
     time.sleep(3)
     print('')
     break
-
-
 # =====================================================================================================================
 # Challenge 6
 def count_file(file):
@@ -56,8 +52,6 @@ def count_file(file):
         for c in content:
             c += len(list(c))
         return lines, words, c
-
-
 print(count_file('txtfiles/sample_filec4.txt'))
 # =====================================================================================================================
 # Challenge 7
@@ -81,7 +75,6 @@ with open('txtfiles/f1.txt') as f:
 
 with open('txtfiles/f2.txt') as f:
     file2 = f.read().splitlines()
-
 file = list(zip(file1, file2))
 
 i = 0
@@ -109,8 +102,18 @@ with open('txtfiles/american-english.txt') as f:
     print(words_list[:100])
 # =====================================================================================================================
 # Challenge 11
+letters = dict()
+for c in string.ascii_letters:
+    letters[c] = 0
+
+with open('txtfiles/american-english.txt') as words:
+    for w in words:
+        for char in string.ascii_letters:
+            letters[char] += w.count(char)
+
+print(letters)
 # =====================================================================================================================
-# Challenge 1
+# Challenge 12
 # =====================================================================================================================
 # Challenge 1
 # =====================================================================================================================
