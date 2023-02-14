@@ -31,3 +31,11 @@ print('#' * 50)
 with open('ignoretxtfiles/configurationtolst.txt') as f:
     c = f.readlines()  # read().splitlines()
     print(c)
+
+# writing to a file
+with open('ignoretxtfiles/written.txt', 'w') as f:
+    f.write('Written')
+    f.write('\nNewline')
+
+with open('ignoretxtfiles/written.txt', 'a') as f:
+    f.write('adds not overrides')
