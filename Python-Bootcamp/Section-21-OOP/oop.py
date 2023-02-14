@@ -26,10 +26,33 @@ x = 10
 while x <= 50:
     new_ninja.circle(x)
     ninja.circle(x + 5)
-    x += 1
-
+    x += 25
 
 my_screen.exitonclick()
 
+
 # abstraction hides important code for users
 # encapsulation hides variables from classes
+
+class Robot:
+    """Class implements robot"""
+
+    def __int__(self, name, year):  # special called automatically
+        self.name = name  # <-- assign params to attributes
+        self.year = year
+
+    def __del__(self):
+        print('Robot Destroyed')
+
+r1 = Robot()
+r1.name = 'hello'
+r1.year = 2022
+print(r1.name, r1.year)
+print(r1.__doc__)
+print(r1.__dict__)
+
+# destructor automaticlly called to free resources during an objects lifetime
+# python has a GC filnalizer
+
+
+
