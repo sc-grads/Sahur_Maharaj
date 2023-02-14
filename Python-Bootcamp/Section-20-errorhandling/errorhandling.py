@@ -4,9 +4,11 @@ try:
     b = int(input('Enter B: '))
     c = a / b
     print(c)
-except:
+except ZeroDivisionError as err:  # other err types TypeError, Exception
     print('Errror has occured')
 finally:
     print('default')
 
 print('Code continued')
+
+# python includes builtin exeptions for spesification
