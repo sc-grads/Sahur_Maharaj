@@ -98,9 +98,17 @@ def equi_ind(ind):
 find_ind = [-7, 1, 5, 2, -4, 3, 0]
 print(equi_ind(find_ind))
 # =====================================================================================================================
-# Challenge 1
+# Challenge 8
+def eqi_indx(commastr):
+    numbs = commastr.split(',')
+    numbs_lst = [int(num) for num in numbs]
 
+    for i in range(0, len(numbs_lst)):
+        if sum(numbs_lst[:i]) == sum(numbs_lst[i + 1:]):
+            return i
+    return False
+print(eqi_indx('-7,1,5,2,-4,3,0'))
 # =====================================================================================================================
-# Challenge 1
+# Challenge 9
 
 # =====================================================================================================================
