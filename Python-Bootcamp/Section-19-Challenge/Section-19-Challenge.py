@@ -50,7 +50,7 @@ def count_file(file):
             words += len(line.split(' '))
         chars = 0
         for c in content:
-            c += len(list(c))
+            chars += len(list(c))
         return lines, words, c
 print(count_file('txtfiles/sample_filec4.txt'))
 # =====================================================================================================================
