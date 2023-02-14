@@ -60,8 +60,18 @@ def prime_no(numbers):
 print(prime_no(2))
 
 # =====================================================================================================================
-# Challenge 1
+# Challenge 5
+large_prime = []
 
+
+def find_large_prime():
+    for i in range(1_000_000, 100_000_000):
+        if prime_no(i):
+            large_prime.append()
+
+
+find_large_prime()
+print(large_prime)
 # =====================================================================================================================
 # Challenge 1
 
