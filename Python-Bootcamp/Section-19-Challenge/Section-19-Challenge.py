@@ -128,4 +128,14 @@ with open('txtfiles/american-english.txt') as words:
 print(letters)
 # =====================================================================================================================
 # Challenge 13
+letters = dict()
+for c in string.ascii_letters:
+    letters[c] = 0
+
+with open('txtfiles/american-english.txt') as words:
+    for w in words:
+        for char in string.ascii_letters:
+            letters[char] += w.count(char)
+
+print(sorted(letters.items(), key=lambda x:x[1], reverse=True))
 # =====================================================================================================================
