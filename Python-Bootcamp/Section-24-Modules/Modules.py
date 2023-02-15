@@ -41,7 +41,6 @@ help('modules')
 
 # creating modules
 import math_module
-print(f'Math mod a val is: {math_module.a}')
 math_module.a = 222
 print(f'math mod a: {math_module.a}')
 total = math_module.add_a(1, 2, 34, 5)

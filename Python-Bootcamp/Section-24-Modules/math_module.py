@@ -5,4 +5,6 @@ def add_a(*args):
         s = s + a
     return s
 
-print(f'__name__ in math is: {__name__}')
+
+if __name__ == '__main__':
+    print(f'__name__ in math is: {__name__}')
