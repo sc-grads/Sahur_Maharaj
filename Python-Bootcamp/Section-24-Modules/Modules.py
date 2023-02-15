@@ -37,3 +37,13 @@ help('modules')
 # ## The block of code below if will be executed only when the script is run directly (not imported in another script)
 # if __name__ == '__main__':
 #     print('Running the script directly. Not importing it as a module.')
+
+
+# creating modules
+import math_module
+print(f'Math mod a val is: {math_module.a}')
+math_module.a = 222
+print(f'math mod a: {math_module.a}')
+total = math_module.add_a(1, 2, 34, 5)
+print(total)
+print(f'__name__ in modules is: {__name__}')
