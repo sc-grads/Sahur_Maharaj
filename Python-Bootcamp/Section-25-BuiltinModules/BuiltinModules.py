@@ -55,3 +55,13 @@ x = max(os.listdir(), key=os.path.getatime)
 #
 # ## Creates a new directory called dir1 in Linux
 # os.mkdir('~/dir1')
+
+
+# Shutil  <-- Shell utilities
+import shutil as sh
+sh.copyfile('src','dest')  # <-- cpy content not data
+sh.copy()  # <-- copies meta data
+sh.copy2() # <-- copies over
+sh.copytree()  # recursive copy
+sh.move()  # <--move or rename
+
