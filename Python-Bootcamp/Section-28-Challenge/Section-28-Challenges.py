@@ -6,7 +6,7 @@ people = [
 ['Maria', 45, 'Paris']
 ]
 
-with open('people.csv', 'w') as f:
+with open('people.csv', 'w', newline='') as f:
     writer = csv.writer(f)
     for i in people:
         writer.writerow(i)
@@ -16,7 +16,7 @@ with open('people.csv') as f:
         print(r)
 # =====================================================================================================================
 # Challenge 2
-with open('people_new.csv', 'w') as f:
+with open('people_new.csv', 'w', newline='') as f:
     writer = csv.writer(f, delimiter=':')
     for w in people:
         writer.writerow(w)
