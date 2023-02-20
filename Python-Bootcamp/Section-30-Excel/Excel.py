@@ -1,4 +1,6 @@
 import openpyxl
+from openpyxl.styles import *
+
 wb = openpyxl.load_workbook('store.xlsx')
 print(wb.sheetnames)
 
@@ -131,7 +133,7 @@ my_cell.alignment = alignment
 
 ## Copy styles from a cell to another
 new_cell = sheet['B10']
-new_font = copy(my_cell.font)
+new_font = my_cell.font
 new_font.color = colors.GREEN
 new_cell.font = new_font
 
