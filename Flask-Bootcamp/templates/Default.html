@@ -1,0 +1,19 @@
+{%extends 'base.html'%}
+{% block body%}
+
+	<h1>Hello from a template</h1>
+	<pre>{{uName}}</pre>
+	<p>{{list_user[2:-2:2]}}</p>
+	<img src="../static/header.jpg" alt="No pic in static">
+	<!-- Control Flow-->
+	<ul>
+		{%for i in list_user%}
+		<li>{{i}}</li>
+		{%if i == 'a' %}
+			<li>A  IS {{i | upper}} in the list</li>
+		{%else%}
+		<li>NO Variable named {{i}} in the list</li>
+		{%endif%}
+		{%endfor%}
+	</ul>
+{% endblock body %}
