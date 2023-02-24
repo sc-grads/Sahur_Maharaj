@@ -1,0 +1,2 @@
+The first computer program as such is generally thought to date back to 1843.
+It was in that year that the English mathematician Ada Lovelace published an algorithm, which calculated a sequence of Bernoulli numbers.
