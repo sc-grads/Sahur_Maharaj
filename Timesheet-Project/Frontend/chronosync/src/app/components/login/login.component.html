@@ -1,0 +1,21 @@
+
+	<div class="center">
+  <h1>CHRONOSYNC - Login</h1>
+  <form method="post">
+    <div class="txt_field">
+      <input type="text" required [(ngModel)]="user_name" name="username" autocomplete="user">
+      <span></span>
+      <label>Email</label>
+    </div>
+    <div class="txt_field">
+      <input type="password" required [(ngModel)]="user_password" name="password" autocomplete="current-password">
+      <span></span>
+      <label>Password</label>
+    </div>
+    <input type="submit" value="Login" (click)="onLogin()" [disabled]="user_name === '' ||
+    user_password === ''">
+    <div class="pass"><a href="#">Forgotten Password?</a></div>
+    <br>
+  </form>
+</div>
+
