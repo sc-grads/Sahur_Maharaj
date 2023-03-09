@@ -4,3 +4,11 @@ the 2023 Python-Bootcamp.
 
 
 The Complete GitHub Actions & Workflows Guide
+
+
+Angular - The compleate guide
+
+
+Python and Flask bootcamp
+
+
