@@ -7,6 +7,7 @@ import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {RouterModule, Routes} from "@angular/router";
 import { E404Component } from './components/e404/e404.component';
+import { UserComponent } from './components/user/user.component';
 
 const appRoutes: Routes = [
   {path: '', component: LoginComponent},
@@ -16,7 +17,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     LoginComponent,
-    E404Component
+    E404Component,
+    UserComponent
   ],
     imports: [
         BrowserModule,

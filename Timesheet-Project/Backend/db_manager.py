@@ -1,4 +1,5 @@
 import pyodbc
+from flask import jsonify
 
 server = 'DESKTOP-VVJU1FS\\SQLEXPRESS'
 database = 'csync'
@@ -16,6 +17,7 @@ con_str = f'''
 '''
 
 
+# login handler
 def login(username, password):
     conn = pyodbc.connect(con_str)
     cursor = conn.cursor()
@@ -24,11 +26,17 @@ def login(username, password):
                    f"employee.e_password = '"
                    f"{password}'")
     userdata = cursor.fetchone()
+    #u_id = userdata
     print(userdata)
     if userdata is None:
         conn.close()
-        return False
+        return {404: 0}
     else:
-        return True
+        u_info = {200: 1}
+        return u_info
 
-#print(login('Jdoe@hotmail.com', 'password'))
+
+# print(login('Jdoe@hotmail.com', 'password'))
+# getting user data
+def get_sheets(user_id):
+    pass

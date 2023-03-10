@@ -14,8 +14,9 @@ def login():
     passwd = data.get('password')
     print(uname)
     print(passwd)
+    print(db.login(uname, passwd))
     if db.login(uname, passwd):
-        return jsonify(data)
+        return '200'
     else:
         return '404'
 
