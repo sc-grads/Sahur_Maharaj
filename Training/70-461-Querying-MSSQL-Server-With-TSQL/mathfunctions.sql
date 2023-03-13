@@ -1,0 +1,2 @@
+DECLARE @varDec AS NUMERIC(7, 2) = 3
+SELECT POWER(@varDec,2)
