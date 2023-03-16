@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, render_template, abort
+from flask import Flask, request, jsonify
 import jwt
 from flask_cors import CORS
 import db_manager as db
