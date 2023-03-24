@@ -1,0 +1,92 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/5/2017 10:35:24 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MYLENOVOI7"
+  DTS:CreatorName="MYLENOVOI7\KameswaraSarma"
+  DTS:DTSID="{083CF97D-2F6D-4969-BAF7-EE1E006173D3}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.4001.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="01_BulkInsertDemo"
+  DTS:PackageType="5"
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{DB4B1A32-2CBC-4EAE-8A93-17555ED0CB33}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Employees.csv]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{B45DA545-5D71-4B19-9BDA-6DC78E3E2FE8}"
+      DTS:ObjectName="Employees.csv">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="H:\Outputs\Employees.csv" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Employees.csv 1]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{B59BB46E-CC05-4ECE-AD26-B11F12E783E3}"
+      DTS:ObjectName="Employees.csv 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="H:\Outputs\Employees.csv" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.AdventureWorks2014]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{E96EDD70-3CB5-4675-B8F1-0D2227BE2D4E}"
+      DTS:ObjectName="LocalHost.AdventureWorks2014">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=.;Initial Catalog=AdventureWorks2014;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Bulk Insert Task"
+      DTS:CreationName="Microsoft.BulkInsertTask"
+      DTS:Description="Bulk Insert Task"
+      DTS:DTSID="{2656761A-B674-4A17-8F52-E46AED26D4C6}"
+      DTS:ExecutableType="Microsoft.BulkInsertTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Bulk Insert Task"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <BulkInsertTask:BulkInsertTaskData
+          BulkInsertTask:CheckConstraints="False"
+          BulkInsertTask:SourceConnectionName="{B45DA545-5D71-4B19-9BDA-6DC78E3E2FE8}"
+          BulkInsertTask:DestinationConnectionName="{E96EDD70-3CB5-4675-B8F1-0D2227BE2D4E}"
+          BulkInsertTask:DestinationTableName="[dbo].[Employees]"
+          BulkInsertTask:FieldTerminator="Comma {,}" xmlns:BulkInsertTask="www.microsoft.com/sqlserver/dts/tasks/bulkinserttask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Bulk Insert Task"
+          TopLeft="35,48" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

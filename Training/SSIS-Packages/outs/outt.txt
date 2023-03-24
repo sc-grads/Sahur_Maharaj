@@ -1,0 +1,93 @@
+317,LL Crankarm,CA-5965,Black,0
+318,ML Crankarm,CA-6738,Black,0
+319,HL Crankarm,CA-7457,Black,0
+322,Chainring,CR-7833,Black,0
+680,HL Road Frame - Black, 58,FR-R92B-58,Black,1431,5
+708,Sport-100 Helmet, Black,HL-U509,Black,34,99
+722,LL Road Frame - Black, 58,FR-R38B-58,Black,337,22
+723,LL Road Frame - Black, 60,FR-R38B-60,Black,337,22
+724,LL Road Frame - Black, 62,FR-R38B-62,Black,337,22
+736,LL Road Frame - Black, 44,FR-R38B-44,Black,337,22
+737,LL Road Frame - Black, 48,FR-R38B-48,Black,337,22
+738,LL Road Frame - Black, 52,FR-R38B-52,Black,337,22
+743,HL Mountain Frame - Black, 42,FR-M94B-42,Black,1349,6
+744,HL Mountain Frame - Black, 44,FR-M94B-44,Black,1349,6
+745,HL Mountain Frame - Black, 48,FR-M94B-48,Black,1349,6
+746,HL Mountain Frame - Black, 46,FR-M94B-46,Black,1349,6
+747,HL Mountain Frame - Black, 38,FR-M94B-38,Black,1349,6
+765,Road-650 Black, 58,BK-R50B-58,Black,782,99
+766,Road-650 Black, 60,BK-R50B-60,Black,782,99
+767,Road-650 Black, 62,BK-R50B-62,Black,782,99
+768,Road-650 Black, 44,BK-R50B-44,Black,782,99
+769,Road-650 Black, 48,BK-R50B-48,Black,782,99
+770,Road-650 Black, 52,BK-R50B-52,Black,782,99
+775,Mountain-100 Black, 38,BK-M82B-38,Black,3374,99
+776,Mountain-100 Black, 42,BK-M82B-42,Black,3374,99
+777,Mountain-100 Black, 44,BK-M82B-44,Black,3374,99
+778,Mountain-100 Black, 48,BK-M82B-48,Black,3374,99
+782,Mountain-200 Black, 38,BK-M68B-38,Black,2294,99
+783,Mountain-200 Black, 42,BK-M68B-42,Black,2294,99
+784,Mountain-200 Black, 46,BK-M68B-46,Black,2294,99
+785,Mountain-300 Black, 38,BK-M47B-38,Black,1079,99
+786,Mountain-300 Black, 40,BK-M47B-40,Black,1079,99
+787,Mountain-300 Black, 44,BK-M47B-44,Black,1079,99
+788,Mountain-300 Black, 48,BK-M47B-48,Black,1079,99
+793,Road-250 Black, 44,BK-R89B-44,Black,2443,35
+794,Road-250 Black, 48,BK-R89B-48,Black,2443,35
+795,Road-250 Black, 52,BK-R89B-52,Black,2443,35
+796,Road-250 Black, 58,BK-R89B-58,Black,2443,35
+814,ML Mountain Frame - Black, 38,FR-M63B-38,Black,348,76
+815,LL Mountain Front Wheel,FW-M423,Black,60,745
+816,ML Mountain Front Wheel,FW-M762,Black,209,025
+817,HL Mountain Front Wheel,FW-M928,Black,300,215
+818,LL Road Front Wheel,FW-R623,Black,85,565
+819,ML Road Front Wheel,FW-R762,Black,248,385
+820,HL Road Front Wheel,FW-R820,Black,330,06
+821,Touring Front Wheel,FW-T905,Black,218,01
+823,LL Mountain Rear Wheel,RW-M423,Black,87,745
+824,ML Mountain Rear Wheel,RW-M762,Black,236,025
+825,HL Mountain Rear Wheel,RW-M928,Black,327,215
+826,LL Road Rear Wheel,RW-R623,Black,112,565
+827,ML Road Rear Wheel,RW-R762,Black,275,385
+828,HL Road Rear Wheel,RW-R820,Black,357,06
+829,Touring Rear Wheel,RW-T905,Black,245,01
+830,ML Mountain Frame - Black, 40,FR-M63B-40,Black,348,76
+831,ML Mountain Frame - Black, 44,FR-M63B-44,Black,348,76
+832,ML Mountain Frame - Black, 48,FR-M63B-48,Black,348,76
+837,HL Road Frame - Black, 62,FR-R92B-62,Black,1431,5
+838,HL Road Frame - Black, 44,FR-R92B-44,Black,1431,5
+839,HL Road Frame - Black, 48,FR-R92B-48,Black,1431,5
+840,HL Road Frame - Black, 52,FR-R92B-52,Black,1431,5
+841,Men's Sports Shorts, S,SH-M897-S,Black,59,99
+849,Men's Sports Shorts, M,SH-M897-M,Black,59,99
+850,Men's Sports Shorts, L,SH-M897-L,Black,59,99
+851,Men's Sports Shorts, XL,SH-M897-X,Black,59,99
+852,Women's Tights, S,TG-W091-S,Black,74,99
+853,Women's Tights, M,TG-W091-M,Black,74,99
+854,Women's Tights, L,TG-W091-L,Black,74,99
+858,Half-Finger Gloves, S,GL-H102-S,Black,24,49
+859,Half-Finger Gloves, M,GL-H102-M,Black,24,49
+860,Half-Finger Gloves, L,GL-H102-L,Black,24,49
+861,Full-Finger Gloves, S,GL-F110-S,Black,37,99
+862,Full-Finger Gloves, M,GL-F110-M,Black,37,99
+863,Full-Finger Gloves, L,GL-F110-L,Black,37,99
+867,Women's Mountain Shorts, S,SH-W890-S,Black,69,99
+868,Women's Mountain Shorts, M,SH-W890-M,Black,69,99
+869,Women's Mountain Shorts, L,SH-W890-L,Black,69,99
+924,LL Mountain Frame - Black, 42,FR-M21B-42,Black,249,79
+925,LL Mountain Frame - Black, 44,FR-M21B-44,Black,249,79
+926,LL Mountain Frame - Black, 48,FR-M21B-48,Black,249,79
+927,LL Mountain Frame - Black, 52,FR-M21B-52,Black,249,79
+943,LL Mountain Frame - Black, 40,FR-M21B-40,Black,249,79
+949,LL Crankset,CS-4759,Black,175,49
+950,ML Crankset,CS-6583,Black,256,49
+951,HL Crankset,CS-9183,Black,404,99
+977,Road-750 Black, 58,BK-R19B-58,Black,539,99
+989,Mountain-500 Black, 40,BK-M18B-40,Black,539,99
+990,Mountain-500 Black, 42,BK-M18B-42,Black,539,99
+991,Mountain-500 Black, 44,BK-M18B-44,Black,539,99
+992,Mountain-500 Black, 48,BK-M18B-48,Black,539,99
+993,Mountain-500 Black, 52,BK-M18B-52,Black,539,99
+997,Road-750 Black, 44,BK-R19B-44,Black,539,99
+998,Road-750 Black, 48,BK-R19B-48,Black,539,99
+999,Road-750 Black, 52,BK-R19B-52,Black,539,99

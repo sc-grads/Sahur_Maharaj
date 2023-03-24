@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33423.256
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "Dataflow", "Dataflow\Dataflow.dtproj", "{58E63A78-9F02-466D-9C14-2D1975CC5C49}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{58E63A78-9F02-466D-9C14-2D1975CC5C49}.Development|Default.ActiveCfg = Development
+		{58E63A78-9F02-466D-9C14-2D1975CC5C49}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {757666CB-0FC5-45AD-B0D3-66F7EAE8D2C4}
+	EndGlobalSection
+EndGlobal

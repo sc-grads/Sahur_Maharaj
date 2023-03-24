@@ -1,0 +1,79 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/12/2017 5:15:21 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MYLENOVOI7"
+  DTS:CreatorName="MYLENOVOI7\KameswaraSarma"
+  DTS:DTSID="{03D2C599-F298-4508-9B92-6C9B3E3A2FCB}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.4001.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="38_HistoryCleanUpTaskDemo"
+  DTS:PackageType="5"
+  DTS:VersionBuild="1"
+  DTS:VersionGUID="{EAE3EBF1-F46D-4FB4-BEAE-550528C6BCFE}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SomeCN]"
+      DTS:CreationName="ADO.NET:SQL"
+      DTS:DTSID="{B0DDC63A-984F-4B13-9B50-DB65F67D261D}"
+      DTS:ObjectName="SomeCN">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=.;Integrated Security=SSPI;Connect Timeout=30;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\History Cleanup Task"
+      DTS:CreationName="Microsoft.DbMaintenanceHistoryCleanupTask"
+      DTS:Description="History Cleanup Task"
+      DTS:DTSID="{0D2BC46F-CF36-4DCA-8AA9-83B91BF284FB}"
+      DTS:ExecutableType="Microsoft.DbMaintenanceHistoryCleanupTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="History Cleanup Task"
+      DTS:TaskContact="History Cleanup Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{B0DDC63A-984F-4B13-9B50-DB65F67D261D}"
+          SQLTask:ServerVersion="13"
+          SQLTask:ExtendedLogging="True"
+          SQLTask:LocalConnectionForLogging=""
+          SQLTask:TaskName=""
+          SQLTask:IgnoreDatabasesInNotOnlineState="False"
+          SQLTask:RemoveBackupRestoreHistory="True"
+          SQLTask:RemoveAgentHistory="True"
+          SQLTask:RemoveDbMaintHistory="True"
+          SQLTask:RemoveOlderThan="1"
+          SQLTask:TimeUnitsType="5" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="177.6,41.6"
+          Id="Package\History Cleanup Task"
+          TopLeft="133.142859410267,96.0470601705532" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
