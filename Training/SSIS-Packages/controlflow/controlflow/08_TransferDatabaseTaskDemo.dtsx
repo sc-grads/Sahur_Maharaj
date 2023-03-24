@@ -1,0 +1,86 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/5/2017 3:19:55 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MYLENOVOI7"
+  DTS:CreatorName="MYLENOVOI7\KameswaraSarma"
+  DTS:DTSID="{07C54371-4452-4E0F-92CF-D0365738848F}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.4001.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="08_TransferDatabaseTaskDemo"
+  DTS:PackageType="5"
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{157C960A-B94E-4452-B865-9BED46FB3E1E}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[.]"
+      DTS:CreationName="SMOServer"
+      DTS:DTSID="{BCFE407D-0981-40A2-A98B-5EDAED95AFCF}"
+      DTS:ObjectName=".">
+      <DTS:ObjectData>
+        <SMOServerConnectionManager
+          ConnectionString="SqlServerName=.;UseWindowsAuthentication=True;UserName=;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[.\sql2016]"
+      DTS:CreationName="SMOServer"
+      DTS:DTSID="{A6381F9F-0A29-432B-8C3F-EE7AE906DE5B}"
+      DTS:ObjectName=".\sql2016">
+      <DTS:ObjectData>
+        <SMOServerConnectionManager
+          ConnectionString="SqlServerName=.\sql2016;UseWindowsAuthentication=True;UserName=;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Transfer Database Task"
+      DTS:CreationName="Microsoft.TransferDatabaseTask"
+      DTS:Description="Transfer Database Task"
+      DTS:DTSID="{F0FEA1DF-F2AE-414E-969B-AA903E01AD9D}"
+      DTS:ExecutableType="Microsoft.TransferDatabaseTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Transfer Database Task"
+      DTS:TaskContact="Transfer Database Task; Microsoft Corporation; SQL Server 2016; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <TransferDatabasesTaskData
+          SrcConn="{A6381F9F-0A29-432B-8C3F-EE7AE906DE5B}"
+          DestConn="{BCFE407D-0981-40A2-A98B-5EDAED95AFCF}"
+          Method="1"
+          SrcDBName="Demo"
+          SrcDBFiles="&quot;Demo.mdf&quot;,&quot;C:\Program Files\Microsoft SQL Server\MSSQL13.SQL2016\MSSQL\DATA&quot;,&quot;&quot;;&quot;Demo_log.ldf&quot;,&quot;C:\Program Files\Microsoft SQL Server\MSSQL13.SQL2016\MSSQL\DATA&quot;,&quot;&quot;"
+          DestDBName="Demo"
+          DestDBFiles="&quot;Demo.mdf&quot;,&quot;H:\Databases\&quot;,&quot;&quot;;&quot;Demo_log.ldf&quot;,&quot;H:\Databases\&quot;,&quot;&quot;"
+          DestOverwrite="True" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="191,42"
+          Id="Package\Transfer Database Task"
+          TopLeft="172,78" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
