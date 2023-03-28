@@ -1,4 +1,0 @@
-Protocol  Address          Age (min)  Hardware Addr   Type   Interface
-Internet  192.168.122.10          -   aabb.cc00.0200  ARPA   Ethernet0/0
-Internet  192.168.122.20          0   aabb.cc00.0100  ARPA   Ethernet0/0
-Internet  192.168.122.30          0   aabb.cc00.0300  ARPA   Ethernet0/0
