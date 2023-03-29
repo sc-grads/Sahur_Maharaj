@@ -25,7 +25,29 @@ LOG ON(
 PRINT 'ChronoSync Created'
 GO
 
+-- creating the login
+BEGIN
+	USE ChronoSync
+	IF EXISTS(SELECT * FROM sys.syslogins WHERE name = 'api')
+		DROP LOGIN api
+		PRINT 'api Login DROPPED'
+	
+	CREATE LOGIN api WITH PASSWORD = 'Qwerty1!'
+	PRINT 'api LOGIN CREATED'
+END
+-- creating the user
+ BEGIN
+	USE ChronoSync
+	IF EXISTS(SELECT * FROM sys.sysusers WHERE name = 'api')
+		DROP USER api
+		PRINT 'api user DROPPED'
+	
+	CREATE USER api FOR LOGIN api
+	PRINT 'api User CREATED'
+END
 -- Creating tables for Chronosync
+USE ChronoSync
+GO
 -- Task Table
 CREATE TABLE task(
 	t_id INT PRIMARY KEY IDENTITY(1, 1),
@@ -75,6 +97,8 @@ CREATE TABLE employee_timesheet(
 )
 PRINT 'CREATED TABLE EMPLOYEES TIMESHEET'
 GO
+
+
 
 
 
