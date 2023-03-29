@@ -28,7 +28,9 @@ class Manager:
 
     # query the DB
     def query(self, query):
-        pass
+        self.cursor.execute(query)
+        rows = self.cur.fetchall()
+        return rows
 
     # closing connection
     def close(self):
@@ -47,4 +49,5 @@ if __name__ == '__main__':
                        database_user='api',
                        database_userpass='Qwerty1!')
     database.connect()
+    database.query('SELECT * FROM timesheet')
     database.close()
