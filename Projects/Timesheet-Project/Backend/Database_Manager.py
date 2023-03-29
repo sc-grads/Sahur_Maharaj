@@ -26,6 +26,11 @@ class Manager:
         except Exception as error:
             print(f'An Exception has occurred with error code: {error}')
 
+    # query the DB
+    def query(self, query):
+        pass
+
+    # closing connection
     def close(self):
         print(f'Closing connection to {self.con.getinfo(pyodbc.SQL_DATABASE_NAME)}')
         if self.cursor:
