@@ -29,7 +29,7 @@ class Manager:
     # query the DB
     def query(self, query):
         self.cursor.execute(query)
-        rows = self.cur.fetchall()
+        rows = self.cursor.fetchall()
         return rows
 
     # closing connection
@@ -41,13 +41,13 @@ class Manager:
             self.con.close()
 
 
+# running the module
 if __name__ == '__main__':
     print(__name__)
-    print('Running...')
+    print('Running Database_Manager Module')
     database = Manager(server_name='DESKTOP-OP7DVNI',
                        database_name='ChronoSync',
                        database_user='api',
                        database_userpass='Qwerty1!')
     database.connect()
-    database.query('SELECT * FROM timesheet')
     database.close()

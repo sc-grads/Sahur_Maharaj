@@ -45,6 +45,11 @@ END
 	CREATE USER api FOR LOGIN api
 	PRINT 'api User CREATED'
 END
+-- user permissions
+BEGIN
+	exec sp_addsrvrolemember 'api', 'sysadmin'
+	PRINT 'ADDED Sysadmin permissions for api user'
+END
 -- Creating tables for Chronosync
 USE ChronoSync
 GO
@@ -97,11 +102,14 @@ CREATE TABLE employee_timesheet(
 )
 PRINT 'CREATED TABLE EMPLOYEES TIMESHEET'
 GO
-
-
-
-
-
+-- Tests table
+CREATE TABLE test_table(
+	tst_id INT PRIMARY KEY IDENTITY(1, 1),
+	tst_name NVARCHAR(20),
+	tst_code NUMERIC(8,2)
+)
+PRINT 'CREATED TABLE FOR TESTS'
+GO
 
 
 
