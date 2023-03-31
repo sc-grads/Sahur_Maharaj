@@ -36,7 +36,7 @@ __pycache__/
 # Miscellaneous
 /Projects/Timesheet-Project/Frontend/chronosync/.angular/cache
 /Projects/Timesheet-Project/Frontend/chronosync/.sass-cache/
-/Projects/Timesheet-Project/Frontend/chronosync//connect.lock
+/Projects/Timesheet-Project/Frontend/chronosync/connect.lock
 /Projects/Timesheet-Project/Frontend/chronosync/coverage
 /Projects/Timesheet-Project/Frontend/chronosync/libpeerconnection.log
 /Projects/Timesheet-Project/Frontend/chronosync/testem.log
@@ -222,3 +222,4 @@ dmypy.json
 /Training/Older-Files/SSIS-Packages/ign/
 
 
+/Projects/Timesheet-Project/Frontend/chronosync/.vscode/
