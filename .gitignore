@@ -3,6 +3,49 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# Compiled output
+/dist
+/tmp
+/out-tsc
+/bazel-out
+
+# Node
+/Projects/Timesheet-Project/Frontend/chronosync/node_modules
+/Projects/Timesheet-Project/Frontend/chronosync/npm-debug.log
+/Projects/Timesheet-Project/Frontend/chronosync/yarn-error.log
+
+# IDEs and editors
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# Miscellaneous
+/Projects/Timesheet-Project/Frontend/chronosync/.angular/cache
+/Projects/Timesheet-Project/Frontend/chronosync/.sass-cache/
+/Projects/Timesheet-Project/Frontend/chronosync/connect.lock
+/Projects/Timesheet-Project/Frontend/chronosync/coverage
+/Projects/Timesheet-Project/Frontend/chronosync/libpeerconnection.log
+/Projects/Timesheet-Project/Frontend/chronosync/testem.log
+/Projects/Timesheet-Project/Frontend/chronosync/typings
+
+# System files
+.DS_Store
+Thumbs.db
+
 # C extensions
 *.so
 .idea
@@ -177,3 +220,9 @@ dmypy.json
 /Training/Older-Files/Python-Bootcamp/Section-38-NetworkAutomation/Section-38-NetworkAutomation/Section-38-NetworkAutomation.gns3
 *.docx
 /Training/Older-Files/SSIS-Packages/ign/
+
+
+<<<<<<< HEAD
+/Projects/Timesheet-Project/Frontend/chronosync/.vscode/
+=======
+>>>>>>> 6a54678b6e4917cffaca909a201ab0919a9156bc
