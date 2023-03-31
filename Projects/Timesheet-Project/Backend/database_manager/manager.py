@@ -43,7 +43,6 @@ class Manager:
 
 # running the module
 if __name__ == '__main__':
-    print(__name__)
     print('Running Database_Manager Module')
     database = Manager(server_name='DESKTOP-OP7DVNI',
                        database_name='ChronoSync',
