@@ -22,7 +22,7 @@ class Manager:
                                       f'UID={self.user};'
                                       f'PWD={self.passwd};')
             self.cursor = self.con.cursor()
-            print(f'Connected to database {self.con.getinfo(pyodbc.SQL_DATABASE_NAME)}')
+            # print(f'Connected to database {self.con.getinfo(pyodbc.SQL_DATABASE_NAME)}')
         except Exception as error:
             print(f'An Exception has occurred with error code: {error}')
 
@@ -34,7 +34,7 @@ class Manager:
 
     # closing connection
     def close(self):
-        print(f'Closing connection to {self.con.getinfo(pyodbc.SQL_DATABASE_NAME)}')
+        # print(f'Closing connection to {self.con.getinfo(pyodbc.SQL_DATABASE_NAME)}')
         if self.cursor:
             self.cursor.close()
         if self.con:
@@ -43,12 +43,11 @@ class Manager:
 
 # running the module
 if __name__ == '__main__':
-<<<<<<< HEAD
-=======
+
     print(__name__)
->>>>>>> 6a54678b6e4917cffaca909a201ab0919a9156bc
+
     print('Running Database_Manager Module')
-    database = Manager(server_name='DESKTOP-OP7DVNI',
+    database = Manager(server_name='localhost',
                        database_name='ChronoSync',
                        database_user='api',
                        database_userpass='Qwerty1!')

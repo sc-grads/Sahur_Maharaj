@@ -102,14 +102,7 @@ CREATE TABLE employee_timesheet(
 )
 PRINT 'CREATED TABLE EMPLOYEES TIMESHEET'
 GO
--- Tests table
-CREATE TABLE test_table(
-	tst_id INT PRIMARY KEY IDENTITY(1, 1),
-	tst_name NVARCHAR(20),
-	tst_code NUMERIC(8,2)
-)
-PRINT 'CREATED TABLE FOR TESTS'
-GO
+
 
 
 
