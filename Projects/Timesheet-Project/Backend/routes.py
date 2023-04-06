@@ -1,19 +1,25 @@
 # imports
-from flask import Flask
+from flask import Flask, jsonify
 from flask_cors import CORS
-from Database_manager import manager
+from database_manager.manager import Manager
 
 # creating flask class and routing endpoints
 app = Flask(__name__)
 CORS(app)
 
+database = Manager(server_name='localhost',
+                   database_name='ChronoSync',
+                   database_user='api',
+                   database_userpass='Qwerty1!')
+
 
 # login endpoint
 @app.route('/endpoint/login')
 def user_login():
-    manager.Manager.query('USE ChronoSync; SELECT * FROM employee')
-
-    pass
+    database.connect()
+    result = database.query("SELECT * FROM employee")
+    database.close()
+    return jsonify(result)
 
 
 if __name__ == '__main__':

@@ -25,6 +25,7 @@ class Manager:
             # print(f'Connected to database {self.con.getinfo(pyodbc.SQL_DATABASE_NAME)}')
         except Exception as error:
             print(f'An Exception has occurred with error code: {error}')
+            raise error
 
     # query the DB
     def query(self, query):
