@@ -18,6 +18,7 @@ class TestManager(unittest.TestCase):
         self.database.con = self.mock_con
         print('Test Setup Complete')
 
+
     def test_connect(self):
         # Test connecting to the database
         self.database.connect()
@@ -49,6 +50,15 @@ class TestManager(unittest.TestCase):
         self.database.query("USE ChronoSync; INSERT INTO test_table (id, name) VALUES (1, 'John')")
         self.database.query.assert_called_with("USE ChronoSync; INSERT INTO test_table (id, name) VALUES (1, 'John')")
         print('Test Query_insert Complete')
+
+    def test_select_from_table(self):
+        # Test selecting rows from a table
+        self.database.cursor = MagicMock()
+        self.database.cursor.fetchall.return_value = [(1, 'John')]
+        result = self.database.query('USE ChronoSync; SELECT * FROM test_table')
+        self.database.cursor.execute.assert_called_with('USE ChronoSync; SELECT * FROM test_table')
+        self.assertEqual(result, [(1, 'John')])
+        print('Test Query_select Complete')
 
     def test_delete_from_table(self):
         # Test deleting a row from a table
