@@ -6,8 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./reg-employee.component.css']
 })
 export class RegEmployeeComponent {
-  password: string = '';
-  confirmPassword: string = '';
+  password: string | undefined;
+  confirmPassword: string | undefined;
 
   submit() {
     if (this.password !== this.confirmPassword) {

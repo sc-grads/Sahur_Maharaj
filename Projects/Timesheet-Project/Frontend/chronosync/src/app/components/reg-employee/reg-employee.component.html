@@ -10,14 +10,16 @@
    <h2>Register an employee</h2>
 
     <div class="content">
-      <input class="input" type="text" placeholder="First Name" />
-      <input class="input" type="text" placeholder="Last Name" />
+      <input class="input" type="text" placeholder="First Name" name="firstname"/>
+      <input class="input" type="text" placeholder="Last Name" name="lastname"/>
 
-      <input class="input" type="text" placeholder="Work Email Address" />
-      <input class="input" type="password" placeholder="Password" [(ngModel)]="password"/>
-      <input class="input" type="password" placeholder="Confirm Password" [(ngModel)]="confirmPassword"/>
+      <input class="input" type="text" placeholder="Work Email Address" name="emailaddr"/>
+      <input class="input" type="password" placeholder="Password" name="paswd" [(ngModel)]="password"/>
+      <input class="input" type="password" placeholder="Confirm Password" name="cfrmpasswd" [(ngModel)]="confirmPassword"/>
 
-      <button class="btn">Register</button></div>
+      <button class="btn" (click)="submit()">Register</button>
+    </div>
+   <br/>
    </div>
 </form>
 </div>
