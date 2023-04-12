@@ -27,11 +27,20 @@ class Manager:
             print(f'An Exception has occurred with error code: {error}')
             raise error
 
-    # query the DB
-    def query(self, query):
+    # insert into the DB
+    def insert(self, table_name, values):
+        values_str = ', '.join([f"'{v}'" for v in values])
+        query = f"INSERT INTO {table_name} VALUES ({values_str})"
         self.cursor.execute(query)
-        rows = self.cursor.fetchall()
-        return rows
+        self.con.commit()
+
+
+    # def query(self, query):
+    #     self.cursor.execute(query)
+    #     rows = self.cursor.fetchall()
+    #     return rows
+
+
 
     # closing connection
     def close(self):

@@ -10,15 +10,33 @@
    <h2>Register an employee</h2>
 
     <div class="content">
-      <input class="input" type="text" placeholder="First Name" />
-      <input class="input" type="text" placeholder="Last Name" />
 
-      <input class="input" type="text" placeholder="Work Email Address" />
-      <input class="input" type="password" placeholder="Password" [(ngModel)]="password"/>
-      <input class="input" type="password" placeholder="Confirm Password" [(ngModel)]="confirmPassword"/>
+      <label for="fname">First Name:</label>
+      <input class="input" name="fname" type="text" placeholder="Enter first name" [(ngModel)]="firstName" />
 
-      <button class="btn">Register</button></div>
+      <label for="lname">Last Name:</label>
+      <input class="input" name="lname" type="text" placeholder="Enter last name" [(ngModel)]="lastName"/>
+
+      <label for="mail">Work Email Address:</label>
+      <input class="input" name="mail" type="email" placeholder="Enter email address" [(ngModel)]="emailAddr"/>
+
+      <label for="pwd">Password:</label>
+      <input class="input" name="pwd" type="password" placeholder="Enter password" [(ngModel)]="password" (ngModelChange)="confirmPassword = password"/>
+
+      <label for="cpwd">Confirm Password:</label>
+      <input class="input" disabled="true" name="cpwd" type="password" placeholder="Confirm password" [(ngModel)]="confirmPassword"/>
+
+      <label for="employeetype">Employee Type:</label>
+      <select class="input" name="employeetype" [(ngModel)]="selectedType">
+        <option *ngFor="let type of employeeType" [value]="type">{{ type }}</option>
+      </select>
+
+
+
+      <button class="btn" [disabled]="isButtonDisabled" (click)="submit()" type="button">
+        {{ errorMessage ? errorMessage : 'Register' }}
+      </button>
+    </div>
    </div>
 </form>
 </div>
-

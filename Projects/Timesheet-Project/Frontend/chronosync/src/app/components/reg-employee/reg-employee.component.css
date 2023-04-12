@@ -1,10 +1,8 @@
 * {
-padding: 0;
-margin: 0;
-box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
-
-
 
 .reg-content{
   display: flex;
@@ -16,86 +14,101 @@ box-sizing: border-box;
   background-color: #0c0116;
 }
 
+label{
+  color: #fff;
+  padding: 5px;
+}
+
 span{
   height: 1px;
 }
+
 /* Basic structure of login form */
 .form {
-position: relative;
-padding: 60px 15px;
-width: 270px;
-height: 500px;
-background: #0c0116;
-overflow: hidden;
-box-shadow: 0 0 10px 0 rgb(116, 119, 114);
-border-radius: 5px;
+  position: relative;
+  padding: 60px 15px;
+  width: 370px;
+  height: 700px;
+  background: #0c0116;
+  overflow: hidden;
+  box-shadow: 0 0 10px 0 rgb(116, 119, 114);
+  border-radius: 25px;
 }
+
 /* The main area of the login form */
 .form-inner {
-position: absolute;
-height: 98%;
-width: 98%;
-top: 50%;
-left: 50%;
-background: #0c0116;
-transform: translate(-50%, -50%);
+  position: absolute;
+  height: 98%;
+  width: 98%;
+  top: 50%;
+  left: 50%;
+  background: #0c0116;
+  transform: translate(-50%, -50%);
 }
 
 .content {
-height: auto;
-width: auto;
-padding: 25px;
+  height: auto;
+  width: auto;
+  padding: 25px;
 }
+
 /* Heading design of login form */
 .form-inner h2 {
-font-size: 25px;
-color: #d7a3d7;
-text-align: center;
-padding-top: 35px;
+  font-size: 25px;
+  color: #d7a3d7;
+  text-align: center;
+  padding-top: 35px;
 }
+
 /* Place to input the login form */
 .input {
-display: block;
-padding: 12px 15px;
-width: 100%;
-left: 50%;
-border-radius: 10px;
-margin-top: 20px;
-border: 2px solid rgb(109, 87, 121);
-outline: none;
-background: #19052c;
-color: white;
+  display: block;
+  padding: 12px 15px;
+  width: 100%;
+  left: 50%;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  margin-top: 5px;
+  border: 2px solid rgb(109, 87, 121);
+  outline: none;
+  text-align: center;
+  background: #19052c;
+  color: white;
 }
+
 /* Login button */
 .btn {
-cursor: pointer;
-color: white;
-margin-top: 40px;
-width: 100%;
-padding: 12px;
-outline: none;
-background: #800080;
-border: none;
-font-size: 18px;
-border-radius: 10px;
-transition: 0.4s;
+  cursor: pointer;
+  color: white;
+  margin-top: 10px;
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  background: #800080;
+  border: none;
+  font-size: 18px;
+  border-radius: 10px;
+  transition: 0.4s;
 }
+
 .btn:hover {
-background: #c907c9;
+  background: #c907c9;
 }
+
 /* Border animation of login form */
 .form span {
-position: absolute;
-height: 50%;
-width: 50%;
+  position: absolute;
+  height: 50%;
+  width: 50%;
 }
+
 /* Animation of the first line */
 .form span:nth-child(1) {
-background: #ffda05;
-top: 0;
-left: -48%;
-animation: 5s span1 infinite linear;
-animation-delay: 1s;
+  background: #ffda05;
+  top: 0;
+  left: -48%;
+  animation: 5s span1 infinite linear;
+  animation-delay: 1s;
 }
 
 @keyframes span1 {
@@ -122,10 +135,10 @@ animation-delay: 1s;
 }
 /* Animation of the second line */
 .form span:nth-child(2) {
-background: #00a800;
-bottom: 0;
-right: -48%;
-animation: 5s span2 infinite linear;
+  background: #00a800;
+  bottom: 0;
+  right: -48%;
+  animation: 5s span2 infinite linear;
 }
 
 @keyframes span2 {
@@ -152,10 +165,10 @@ animation: 5s span2 infinite linear;
 }
 /* Animation of the third line */
 .form span:nth-child(3) {
-background: #800080;
-right: -48%;
-top: 0;
-animation: 5s span3 infinite linear;
+  background: #800080;
+  right: -48%;
+  top: 0;
+  animation: 5s span3 infinite linear;
 }
 
 @keyframes span3 {
@@ -182,11 +195,11 @@ animation: 5s span3 infinite linear;
 }
 /* Animation of the fourth line */
 .form span:nth-child(4) {
-background: #ff0000;
-bottom: 0;
-right: -48%;
-animation: 5s span4 infinite linear;
-animation-delay: 1s;
+  background: #ff0000;
+  bottom: 0;
+  right: -48%;
+  animation: 5s span4 infinite linear;
+  animation-delay: 1s;
 }
 
 @keyframes span4 {
@@ -211,3 +224,4 @@ animation-delay: 1s;
   right: -48%;
 }
 }
+
