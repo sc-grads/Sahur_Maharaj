@@ -19,27 +19,19 @@ database = Manager(server_name='localhost',
 # register endpoint
 @app.route('/endpoint/register', methods=['POST'])
 def register_user():
-    data = request.get_json()
+    pass
 
-    fname = data['fname']
-    lname = data['lname']
-    email = data['email']
-    password = data['passwd']
-    salt = data['salt']
-    emp_type = data['selectedT']
-    # add user data to database
-    try:
-        database.connect()
-        database.insert('employee', [fname, lname, email, password, salt, emp_type])
-        database.close()
-    except Exception as e:
-        print(e)
-        response = {'error': 'Could not register user'}
-        return jsonify(response), 500
 
-    # Return a JSON response
-    response = {'success': 'OK'}
-    return response
+# loging user in
+@app.route('endpoint/login', methods=['POST', 'GET'])
+def login():
+    pass
+
+
+# get user data
+@app.route('endpoint/login/<user>', methods=['POST', 'GET'])
+def user_profile():
+    pass
 
 
 if __name__ == '__main__':

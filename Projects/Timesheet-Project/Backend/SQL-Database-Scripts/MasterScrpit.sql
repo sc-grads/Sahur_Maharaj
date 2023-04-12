@@ -108,3 +108,4 @@ GO
 
 
 
+select * from employee
