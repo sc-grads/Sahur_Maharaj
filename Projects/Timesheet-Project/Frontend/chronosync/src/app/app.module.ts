@@ -8,6 +8,9 @@ import { UserAnalyticPannelComponent } from './components/user-analytic-pannel/u
 import { AdminAnalyticPannelComponent } from './components/admin-analytic-pannel/admin-analytic-pannel.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { FormsModule } from "@angular/forms";
+
+import { HttpClientModule } from "@angular/common/http";
 
 
 @NgModule({
@@ -18,10 +21,12 @@ import { RegisterComponent } from './components/register/register.component';
     UserAnalyticPannelComponent,
     AdminAnalyticPannelComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

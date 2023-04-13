@@ -1,8 +1,6 @@
 # imports
-import base64
-import hashlib
 from flask import Flask, jsonify, request
-import json
+
 from flask_cors import CORS
 from database_manager.manager import Manager
 
@@ -23,13 +21,19 @@ def register_user():
 
 
 # loging user in
-@app.route('endpoint/login', methods=['POST', 'GET'])
+@app.route('/endpoint/login', methods=['POST'])
 def login():
-    pass
+    username = request.json.get('username')
+    password = request.json.get('password')
+    print(username, password)
+    if username == 'test' and password == 'test':
+        return jsonify({'status': 'success'})
+    else:
+        return jsonify({'status': 'error', 'message': 'Invalid credentials'})
 
 
 # get user data
-@app.route('endpoint/login/<user>', methods=['POST', 'GET'])
+@app.route('/endpoint/login/<user>', methods=['POST', 'GET'])
 def user_profile():
     pass
 
