@@ -8,4 +8,6 @@
 		<button type="submit" (click)="submit()">Login</button>
 		<button type="submit">Forgot Password</button>
 	</form>
+  <app-error-dialog *ngIf="errorMessage" [message]="errorMessage"></app-error-dialog>
+
 </div>

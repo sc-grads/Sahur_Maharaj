@@ -11,6 +11,18 @@ import { RegisterComponent } from './components/register/register.component';
 import { FormsModule } from "@angular/forms";
 
 import { HttpClientModule } from "@angular/common/http";
+import { RouterModule, Routes } from '@angular/router';
+import { ErrorDialogComponent } from './components/error-dialog/error-dialog.component';
+
+const routes: Routes = [
+  { path: '', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'user', component: UserPannelComponent },
+  { path: 'user_analytics', component: UserAnalyticPannelComponent },
+  { path: 'admin', component: AdminPanelComponent },
+  { path: 'admin_analytics', component: AdminAnalyticPannelComponent },
+  { path: '**', redirectTo: '' }
+];
 
 
 @NgModule({
@@ -22,11 +34,13 @@ import { HttpClientModule } from "@angular/common/http";
     AdminAnalyticPannelComponent,
     LoginComponent,
     RegisterComponent,
+    ErrorDialogComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    RouterModule.forRoot(routes),
   ],
   providers: [],
   bootstrap: [AppComponent]

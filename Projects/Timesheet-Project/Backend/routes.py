@@ -17,19 +17,56 @@ database = Manager(server_name='localhost',
 # register endpoint
 @app.route('/endpoint/register', methods=['POST'])
 def register_user():
-    pass
+    firstname = request.json.get('firstname')
+    lastname = request.json.get('lastname')
+    wemail = request.json.get('wemail')
+    password = request.json.get('password')
+    etype = request.json.get('etype')
+    print(firstname, lastname, wemail, password, etype)
+    # connecting and inserting the data to the db
+    try:
+        database.connect()
+        database.insert('employee', [firstname, lastname, wemail, password, etype])
+        database.close()
+        return jsonify({'status': 'success'})
+    except Exception as e:
+        print(e)
+        return jsonify({'status': 'error', 'message': f'Error: {e}'})
 
 
-# loging user in
+# login user
 @app.route('/endpoint/login', methods=['POST'])
 def login():
     username = request.json.get('username')
     password = request.json.get('password')
-    print(username, password)
-    if username == 'test' and password == 'test':
-        return jsonify({'status': 'success'})
-    else:
-        return jsonify({'status': 'error', 'message': 'Invalid credentials'})
+    # database operations
+    try:
+        database.connect()
+        database_uname = database.select(table_name='employee',
+                                         columns=['e_email'],
+                                         where_clause='e_email = ? AND e_hashpassword = ?',
+                                         parameters=(username, password))
+        database_upass = database.select(table_name='employee',
+                                         columns=['e_hashpassword'],
+                                         where_clause='e_email = ? AND e_hashpassword = ?',
+                                         parameters=(username, password))
+        database_uAL = database.select(table_name='employee',
+                                       columns=['e_type'],
+                                       where_clause='e_email = ? AND e_hashpassword = ?',
+                                       parameters=(username, password))
+        print(database_uname)
+        print(database_upass)
+        print(database_uAL)
+
+        # verify login data
+        if database_uname[0][0] == username and database_upass[0][0] == password:
+            access_level = database_uAL[0][0]
+            return jsonify({'status': 'success', 'access_level': access_level}) # include access_level in the response
+        else:
+            return jsonify({'status': 'error', 'message': 'Invalid credentials'})
+    except Exception as e:
+        print(e)
+        return jsonify({'status': 'error', 'message': f'Error: User Not Found'})
 
 
 # get user data
