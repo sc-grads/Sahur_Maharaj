@@ -1,7 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
 *{
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  overflow: auto;
 }
 

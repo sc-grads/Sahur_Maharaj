@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class RegisterComponent {
 
+  employeeTypes = ['standard', 'superuser'];
+  selectedEmployeeType = this.employeeTypes[0];
+
 }

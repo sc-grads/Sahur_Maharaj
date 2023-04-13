@@ -13,6 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": ["bcryptjs"],
             "outputPath": "dist/chronosync",
             "index": "src/index.html",
             "main": "src/main.ts",

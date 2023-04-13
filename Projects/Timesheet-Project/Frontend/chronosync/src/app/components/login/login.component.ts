@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { LoginService } from "../../services/login.service";
-import * as bcrypt from "bcryptjs";
+import * as CryptoJS from 'crypto-js';
 
 interface LoginResponse {
   status: string;
@@ -19,7 +19,7 @@ export class LoginComponent {
   constructor(private loginsrv: LoginService) {  }
 
   submit(){
-    const hashedPassword = bcrypt.hashSync(this.password, 10);
+    const hashedPassword = CryptoJS.SHA256(this.password).toString();
     this.loginsrv.login(this.username, hashedPassword).subscribe((response: LoginResponse) => {
       if (response.status === 'success') {
         console.log('Login successful!');
