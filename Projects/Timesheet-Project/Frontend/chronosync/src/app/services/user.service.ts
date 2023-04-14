@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-import {LoginComponent} from "../components/login/login.component";
+import { HttpClient } from "@angular/common/http";
 
-interface userData{
+interface UserData {
   userid: number;
   clientid: number;
   taskid: number;
@@ -10,7 +9,7 @@ interface userData{
   totalid: number;
 }
 
-interface userResponse{
+interface UserResponse {
   status: string;
   message?: string;
 }
@@ -20,12 +19,13 @@ interface userResponse{
 })
 export class UserService {
 
-  constructor(private httpClient: HttpClient, private loggedin: LoginComponent) { }
-  private userendpoint = `http://localhost:5000/endpoint/${this.loggedin.username}`;
+  private userendpoint: string = '';
 
-  getData(userid: number, clientid:number, taskid:number, timesheetid:number, totalid:number){
-    const data: userData = {userid: userid, clientid:clientid, taskid:taskid, timesheetid:timesheetid, totalid:totalid};
-    return this.httpClient.post<userResponse>(`${this.userendpoint}`, data);
+  constructor(private httpClient: HttpClient) { }
+
+  getData(userid: number, clientid: number, taskid: number, timesheetid: number, totalid: number, submit: string) {
+    this.userendpoint = `http://localhost:5000/endpoint/login/${submit}`;
+    const data: UserData = { userid, clientid, taskid, timesheetid, totalid };
+    return this.httpClient.post<UserResponse>(`${this.userendpoint}`, data);
   }
-
 }

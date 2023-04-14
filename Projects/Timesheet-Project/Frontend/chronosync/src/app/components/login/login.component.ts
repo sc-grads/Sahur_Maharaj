@@ -20,6 +20,7 @@ export class LoginComponent {
   username: string = '';
   password: string = '';
   errorMessage: string | undefined = '';
+  user: string = '';
 
   constructor(private loginsrv: LoginService, private router: Router) {  }
 
@@ -30,17 +31,18 @@ export class LoginComponent {
     if (response.status === 'success') {
       console.log('Login successful!');
       console.log('Access Level: ' + response.access_level);
-      const user = this.username.split('.')[0];
+      this.user = this.username.split('.')[0];
       if (response.access_level === 'SUPERUSER') {
-        this.router.navigate(['admin', user]).then(r => console.log('Admin Access'));
+        this.router.navigate(['admin', this.user]).then(r => console.log('Admin Access: ', r));
       } else {
-        this.router.navigate(['user', user]).then(r => console.log('User Access'));
+        this.router.navigate(['user', this.user]).then(r => console.log('User Access: ', r));
       }
     } else {
       console.log('Login failed: ' + response.message);
       this.errorMessage = response.message;
     }
   });
+ return this.user;
 }
 
 }

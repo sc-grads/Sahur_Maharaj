@@ -8,7 +8,9 @@ import {UserService} from "../../services/user.service";
 export class UserPannelComponent {
 
   constructor(private usrsrv: UserService) {  }
+
   ngOnInit(){
+
 
   }
 

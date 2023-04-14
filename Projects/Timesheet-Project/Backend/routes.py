@@ -92,6 +92,7 @@ def user_profile(username):
                                             where_clause='e_email = ?',
                                             parameters=(username,))
                 database.close()
+                print(f'created session for: {username}')
                 # return user data as JSON response
                 return jsonify({'status': 'success',
                                 'firstname': user_data[0][0],
