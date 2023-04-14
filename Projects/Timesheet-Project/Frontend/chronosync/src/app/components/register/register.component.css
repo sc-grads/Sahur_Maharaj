@@ -83,3 +83,16 @@ option.superuser {
   background-color: lightcoral;
   color: white;
 }
+@media screen and (max-width: 600px) {
+  form {
+    font-size: 12px;
+    max-width: 300px;
+    margin-top: 50px;
+  }
+  input[type="text"], input[type="password"], input[type="email"] {
+    margin: 10px;
+  }
+  button[type="submit"] {
+    margin: 10px;
+  }
+}

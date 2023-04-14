@@ -15,6 +15,7 @@ interface LoginResponse {
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+
 export class LoginComponent {
   username: string = '';
   password: string = '';
@@ -29,10 +30,11 @@ export class LoginComponent {
     if (response.status === 'success') {
       console.log('Login successful!');
       console.log('Access Level: ' + response.access_level);
+      const user = this.username.split('.')[0];
       if (response.access_level === 'SUPERUSER') {
-        this.router.navigate(['/admin']).then(r => console.log('Admin Access'));
+        this.router.navigate(['admin', user]).then(r => console.log('Admin Access'));
       } else {
-        this.router.navigate(['/user']).then(r => console.log('User Access'));
+        this.router.navigate(['user', user]).then(r => console.log('User Access'));
       }
     } else {
       console.log('Login failed: ' + response.message);

@@ -21,4 +21,5 @@
 		<button type="submit" (click)="register()">Register</button>
 
 	</form>
+  <app-error-dialog *ngIf="errorMessage" [message]="errorMessage"></app-error-dialog>
 </div>

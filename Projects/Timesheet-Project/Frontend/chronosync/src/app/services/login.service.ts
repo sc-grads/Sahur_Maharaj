@@ -20,9 +20,10 @@ export class LoginService {
 
   constructor(private httpClient: HttpClient) { }
 
-  login(username: string, password: string) {
-    const data: LoginData = {username: username, password: password};
-    return this.httpClient.post<LoginResponse>(this.loginEndpoint, data);
+  login(email: string, password: string) {
+    const username = email.split('.')[0];
+    const data: LoginData = {username: email, password: password};
+    return this.httpClient.post<LoginResponse>(`${this.loginEndpoint}`, data);
   }
 
 }

@@ -19,16 +19,19 @@ export class RegisterComponent {
   password:string = '';
   employeeTypes = ['STANDARD', 'SUPERUSER'];
   selectedEmployeeType = this.employeeTypes[0];
+  errorMessage: string | undefined = '';
 
   constructor(private regSvc: RegisterService) {  }
 
   register(){
+    this.errorMessage = ''; // reset error message
     const hashedPassword = CryptoJS.SHA256(this.password).toString();
     this.regSvc.register(this.firstName, this.lastName, this.email, hashedPassword, this.selectedEmployeeType).subscribe
     ((response: RegisterResponse) => {
       if (response.status === 'success') {
         console.log('Registration successful!');
       } else {
+        this.errorMessage = `User Already Exists`;
         console.log('Registration failed: ' + response.message);
       }
     });

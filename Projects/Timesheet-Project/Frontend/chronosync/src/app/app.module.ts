@@ -15,13 +15,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { ErrorDialogComponent } from './components/error-dialog/error-dialog.component';
 
 const routes: Routes = [
-  { path: '', component: LoginComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'user', component: UserPannelComponent },
-  { path: 'user_analytics', component: UserAnalyticPannelComponent },
-  { path: 'admin', component: AdminPanelComponent },
-  { path: 'admin_analytics', component: AdminAnalyticPannelComponent },
-  { path: '**', redirectTo: '' }
+  { path: 'user/:user', component: UserPannelComponent },
+  { path: 'user_analytics/:user', component: UserAnalyticPannelComponent },
+  { path: 'admin/:user', component: AdminPanelComponent },
+  { path: 'admin_analytics/:user', component: AdminAnalyticPannelComponent },
+  { path: '', redirectTo: '' }
 ];
 
 

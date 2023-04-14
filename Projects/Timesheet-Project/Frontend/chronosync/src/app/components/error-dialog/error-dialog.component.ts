@@ -15,7 +15,7 @@ export class ErrorDialogComponent implements OnInit {
     // Hide the message after 2 seconds
     setTimeout(() => {
       this.show = false;
-    }, 500);
+    }, 1500);
   }
 
   close(): void {
