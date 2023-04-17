@@ -220,3 +220,4 @@ dmypy.json
 *.docx
 /Training/Older-Files/SSIS-Packages/ign/
 
+/Training/PowerBI E2E Project/DataFiles/
