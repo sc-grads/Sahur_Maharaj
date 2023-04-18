@@ -104,8 +104,8 @@ CREATE TABLE employee_timesheet(
 PRINT 'CREATED TABLE EMPLOYEES TIMESHEET'
 GO
 
+select * from task
 
 
 
-select * from employee
-insert into employee values ('sahur', 'maharaj', 'sahur.maharaj@sambeconsulting.com', '961b6dd3ede3cb8ecbaacbd68de040cd78eb2ed5889130cceb4c49268ea4d506', 'STANDARD')
+
