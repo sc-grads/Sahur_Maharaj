@@ -11,7 +11,6 @@ export class DataModel {
   }
   // getters and setters
 
-
   get id(): number {
     return this._id;
   }

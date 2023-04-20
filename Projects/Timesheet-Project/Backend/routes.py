@@ -68,7 +68,6 @@ def validate_login():
 
 @app.route('/endpoint/load/', methods=['GET'])
 def load_data():
-
     if request.method == 'GET':
         # connect and get client / task from db
         try:
@@ -79,9 +78,6 @@ def load_data():
             clients = [{'id': c[0], 'name': c[1], 'description': c[2]} for c in client_list]
             tasks = [{'id': t[0], 'name': t[1], 'description': t[2]} for t in task_list]
 
-            print(clients)
-            print(tasks)
-
             return jsonify({'message': 'OK', 'clients': clients, 'tasks': tasks})
 
         except Exception as e:
@@ -89,6 +85,18 @@ def load_data():
         # close connection
         finally:
             database.close()
+    else:
+        return jsonify({'message': 'Incorrect Request Method', 'error': 400})
+
+
+@app.route('/endpoint/insert', methods=['POST'])
+def insert_time_data():
+    print('Reached insert method')
+    if request.method == 'POST':
+        date = request.json.get('cdate')
+        print(date)
+        return jsonify({'message': 'OK'})
+
     else:
         return jsonify({'message': 'Incorrect Request Method', 'error': 400})
 

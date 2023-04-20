@@ -1,5 +1,23 @@
 <div class="container">
   <div class="content">
+        <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Billable</th>
+          <th>Client</th>
+          <th>Task</th>
+          <th>Project</th>
+          <th>Comments</th>
+          <th>Start Time</th>
+          <th>End Time</th>
+          <th>Total Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Insert entries here -->
+      </tbody>
+    </table>
 
   </div>
 
@@ -19,7 +37,44 @@
         </select>
       </div>
       <!--Client Name selector-->
-
+      <div class="breaker">
+        <label for="cList">Client</label>
+        <select name="cList" id="cList" [(ngModel)]="client" (change)="onClientChange($event)">
+          <option *ngFor="let c of clientlist" [value]="c">{{c}}</option>
+        </select>
+      </div>
+      <!--Task List Selector-->
+      <div class="breaker">
+        <label for="tList">Task</label>
+        <select name="tList" id="tList" [(ngModel)]="task" (change)="onTaskChange($event)">
+          <option *ngFor="let t of tasklist" [value]="t" >{{t}}</option>
+        </select>
+      </div>
+      <!--Project name -->
+      <div class="breaker">
+        <label for="pName">Project</label>
+        <input type="text" name="pName" id="pName" [(ngModel)]="projectname">
+      </div>
+      <!--Comment -->
+      <div class="breaker">
+        <label for="comment">Comments</label>
+        <input type="text" name="comment" id="comment" [(ngModel)]="comment">
+      </div>
+      <!-- Start Time-->
+      <div class="breaker">
+        <label for="sTime">Start Time</label>
+        <input type="time" name="sTime" id="sTime" [(ngModel)]="timeS" (change)="onStartTimeChange()">
+      </div>
+      <!-- End Time-->
+      <div class="breaker">
+        <label for="eTime">End Time</label>
+        <input type="time" name="eTime" id="eTime" [(ngModel)]="timeE" (change)="onEndTimeChange()">
+      </div>
+      <!-- Total Time-->
+      <div class="breaker">
+        <label for="tTime">Total Time</label>
+        <input type="text" name="tTime" id="tTime" [(ngModel)]="timeT" disabled="true">
+      </div>
 
 
       <div class="breaker">

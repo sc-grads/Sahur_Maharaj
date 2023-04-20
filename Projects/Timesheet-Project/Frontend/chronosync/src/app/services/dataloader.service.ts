@@ -17,7 +17,6 @@ export class DataloaderService {
   constructor(private httpC: HttpClient) { }
   getData(){
     return this.httpC.get<Data>(this.loadurl);
-
   }
 
 }

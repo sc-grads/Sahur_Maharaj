@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import {DataModel} from "../models/data.model";
-
+import { DataModel } from '../models/data.model';
 
 @Injectable({
   providedIn: 'root'
@@ -8,8 +7,9 @@ import {DataModel} from "../models/data.model";
 export class DataService {
   private _data: DataModel | undefined;
   clients: DataModel[] = [];
+  tasks: DataModel[] = [];
 
-  constructor() { }
+  constructor() {}
 
   setClient(data: DataModel) {
     this._data = data;
@@ -19,11 +19,19 @@ export class DataService {
     return <DataModel>this._data;
   }
 
-   setClients(clients: DataModel[]): void {
+  setClients(clients: DataModel[]): void {
     this.clients = clients;
   }
 
   getClients(): DataModel[] {
     return this.clients;
+  }
+
+  setTasks(tasks: DataModel[]): void {
+    this.tasks = tasks;
+  }
+
+  getTasks(): DataModel[] {
+    return this.tasks;
   }
 }
