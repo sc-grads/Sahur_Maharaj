@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="content">
+
+  </div>
+
+  <div class="insert">
+    <h1>Insert Time Entry</h1>
+    <form (ngSubmit)="addEntry()" #timeEntry="ngForm">
+      <!--Date -->
+      <div class="breaker">
+        <label for="cDate">Date</label>
+        <input type="date" id="cDate" name="cDate" [(ngModel)]="cDate" required>
+      </div>
+      <!--Billable-->
+      <div class="breaker">
+        <label for="billable">Billable</label>
+        <select name="billable" id="billable" [(ngModel)]="billable">
+          <option *ngFor="let b of billability" [value]="b">{{b}}</option>
+        </select>
+      </div>
+      <!--Client Name selector-->
+
+
+
+      <div class="breaker">
+        <button type="submit" [disabled]="!timeEntry.form.valid">Submit Entry</button>
+      </div>
+
+    </form>
+
+  </div>
+</div>

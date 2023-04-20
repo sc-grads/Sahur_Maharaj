@@ -105,7 +105,9 @@ PRINT 'CREATED TABLE EMPLOYEES TIMESHEET'
 GO
 
 select * from task
-
-
+select * from employee
+select * from client
+select * from timesheet
+select * from employee_timesheet
 
 

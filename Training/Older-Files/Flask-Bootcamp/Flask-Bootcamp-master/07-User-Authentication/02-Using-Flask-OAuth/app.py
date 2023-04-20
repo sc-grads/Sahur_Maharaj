@@ -6,13 +6,13 @@
 ###########################################################################
 # Visit the Google Developers Console at https://console.developers.google.com and
 # create a new project. In the “APIs & auth” section, click on “Credentials”, and
-# then click the “Create a new Client ID” button. Select “Web Application” for
+# then click the “Create a new DataModel ID” button. Select “Web Application” for
 # the application type, and click the “Configure consent screen” button. Put in
 # your application information, and click Save. Once you’ve done that, you’ll
 # see two new fields: “Authorized JavaScript origins” and “Authorized redirect
 # URIs”. Put http://localhost:5000/login/google/authorized into “Authorized
-# redirect URIs”, and click “Create Client ID”. Take note of the “Client ID”
-# and “Client Secret” for the application.
+# redirect URIs”, and click “Create DataModel ID”. Take note of the “DataModel ID”
+# and “DataModel Secret” for the application.
 ###########################################################################
 ###########################################################################
 
