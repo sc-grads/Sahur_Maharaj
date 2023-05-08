@@ -171,7 +171,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-.idea
 /Training/Older-Files/Python-Bootcamp/pdf notes and cheats
 /Training/Older-Files/Python-Bootcamp/Section-10-Lists/list_project_countries.py
 /Training/Older-Files/Python-Bootcamp/Section-10-Lists/list_project_extract_ip.py
@@ -221,8 +220,6 @@ dmypy.json
 *.docx
 /Training/Older-Files/SSIS-Packages/ign/
 
-
-<<<<<<< HEAD
-/Projects/Timesheet-Project/Frontend/chronosync/.vscode/
-=======
->>>>>>> 6a54678b6e4917cffaca909a201ab0919a9156bc
+/Training/PowerBI E2E Project/DataFiles/
+/Training/Power BI Bank Domain/Datasets/
+/Training/PowerBI Advanced DAX/DataFiles/
