@@ -108,7 +108,7 @@ GO
 
 -- employee
 INSERT INTO employee
-VALUES ('sahur', 'maharaj', 'sahur.maharaj@sambeconsulting.com', '523sf73a329h6ceu61fr98e.710me67a1a6h911ad52rff4af82jffcs456a1b0ha64u3efr313ab598b0', 'STANDARD'); -- password aa
+VALUES ('sahur', 'maharaj', 'sahur.maharaj@sambeconsulting.com', 'fbfsc43a7a0h085u49cre17.a8bma49a420h248a5f4r0e5a181j1cfS4b8u466dbd5h2f9ie30f6ae097', 'STANDARD'); -- password aa
 -- task 
 INSERT INTO task
 VALUES

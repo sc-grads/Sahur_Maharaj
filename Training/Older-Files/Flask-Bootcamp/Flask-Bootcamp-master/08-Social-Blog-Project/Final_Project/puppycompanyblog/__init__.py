@@ -36,11 +36,11 @@ Migrate(app,db)
 
 login_manager = LoginManager()
 
-# We can now pass in our app to the login manager
+# We can now pass in our app to the loginInterface manager
 login_manager.init_app(app)
 
-# Tell users what view to go to when they need to login.
-login_manager.login_view = "users.login"
+# Tell users what view to go to when they need to loginInterface.
+login_manager.login_view = "users.loginInterface"
 
 
 ###########################

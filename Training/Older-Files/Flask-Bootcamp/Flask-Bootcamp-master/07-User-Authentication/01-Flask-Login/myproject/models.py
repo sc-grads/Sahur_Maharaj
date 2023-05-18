@@ -9,7 +9,7 @@ from flask_login import UserMixin
 # get_id()
 
 
-# The user_loader decorator allows flask-login to load the current user
+# The user_loader decorator allows flask-loginInterface to load the current user
 # and grab their id.
 @login_manager.user_loader
 def load_user(user_id):

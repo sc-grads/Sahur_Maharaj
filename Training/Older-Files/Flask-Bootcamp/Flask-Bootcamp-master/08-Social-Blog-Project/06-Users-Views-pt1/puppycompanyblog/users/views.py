@@ -21,13 +21,13 @@ def register():
         db.session.add(user)
         db.session.commit()
         flash('Thanks for registration!')
-        return redirect(url_for('users.login'))
+        return redirect(url_for('users.loginInterface'))
 
     return render_template('register.html',form=form)
 
 
 
-# login
+# loginInterface
 @users.route('/login',methods=['GET','POST'])
 def login():
 
@@ -48,7 +48,7 @@ def login():
 
             return redirect(next)
 
-    return render_template('login.html',form=form)
+    return render_template('loginInterface.html',form=form)
 
 
 # logout

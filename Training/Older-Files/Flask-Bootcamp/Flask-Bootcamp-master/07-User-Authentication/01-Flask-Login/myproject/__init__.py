@@ -5,7 +5,7 @@ from flask_migrate import Migrate
 from flask_login import LoginManager
 
 
-# Create a login manager object
+# Create a loginInterface manager object
 login_manager = LoginManager()
 
 app = Flask(__name__)
@@ -19,8 +19,8 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 Migrate(app,db)
 
-# We can now pass in our app to the login manager
+# We can now pass in our app to the loginInterface manager
 login_manager.init_app(app)
 
-# Tell users what view to go to when they need to login.
-login_manager.login_view = "login"
+# Tell users what view to go to when they need to loginInterface.
+login_manager.login_view = "loginInterface"

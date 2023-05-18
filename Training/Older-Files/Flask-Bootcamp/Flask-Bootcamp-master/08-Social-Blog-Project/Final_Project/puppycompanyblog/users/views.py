@@ -20,8 +20,8 @@ def register():
 
         db.session.add(user)
         db.session.commit()
-        flash('Thanks for registering! Now you can login!')
-        return redirect(url_for('users.login'))
+        flash('Thanks for registering! Now you can loginInterface!')
+        return redirect(url_for('users.loginInterface'))
     return render_template('register.html', form=form)
 
 @users.route('/login', methods=['GET', 'POST'])
@@ -42,7 +42,7 @@ def login():
             login_user(user)
             flash('Logged in successfully.')
 
-            # If a user was trying to visit a page that requires a login
+            # If a user was trying to visit a page that requires a loginInterface
             # flask saves that URL as 'next'.
             next = request.args.get('next')
 
@@ -52,7 +52,7 @@ def login():
                 next = url_for('core.index')
 
             return redirect(next)
-    return render_template('login.html', form=form)
+    return render_template('loginInterface.html', form=form)
 
 
 
