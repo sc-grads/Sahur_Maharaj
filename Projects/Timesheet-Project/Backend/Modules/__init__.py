@@ -1,1 +1,1 @@
-__all__ = ["DatabaseMod"]
+__all__ = ["DatabaseMod", "loadMod"]

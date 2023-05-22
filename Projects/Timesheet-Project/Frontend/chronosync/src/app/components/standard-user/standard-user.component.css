@@ -1,0 +1,19 @@
+.split-container {
+  display: flex;
+}
+
+.left-section {
+  flex: 0 0 75%;
+  background-color: #f0f0f0;
+  border-radius: 25px;
+  margin: 10px;
+  padding: 10px;
+}
+
+.right-section {
+  flex: 1;
+  background-color: #d0d0d0;
+  border-radius: 25px;
+  margin: 10px;
+  padding: 10px;
+}

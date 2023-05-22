@@ -1,1 +1,1 @@
-__all__ = ["LoginController"]
+__all__ = ["LoginController", "LoadController"]
