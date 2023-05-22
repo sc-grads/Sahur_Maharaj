@@ -2,67 +2,56 @@
   <div class="left-section">
 
   </div>
+
+
   <div class="right-section">
     <h1>Insert Clock</h1>
-    <form>
-<!--      Date picker-->
-      <div>
+    <form (submit)="submitClockData()">
+      <div class="form-group">
         <label>Date:</label>
-        <input type="date" name="t_date">
+        <input type="date" name="t_date" [(ngModel)]="date">
       </div>
-<!--      Billable-->
-      <div>
+      <!-- Billable -->
+      <div class="form-field">
         <label>Billable:</label>
-        <select name="t_billable">
-          <option value="true">Yes</option>
-          <option value="false">No</option>
+        <select name="t_billable" [(ngModel)]="billable">
+          <option *ngFor="let option of billableOptions" [value]="option.value">{{ option.label }}</option>
         </select>
       </div>
-<!--     Project -->
-      <div>
+
+      <div class="form-group">
         <label>Project:</label>
-        <input type="text" name="t_project">
+        <input type="text" name="t_project" [(ngModel)]="project">
       </div>
-<!--      Client-->
-      <div>
+      <div class="form-group">
         <label>Client:</label>
-        <select name="client">
-          <option></option>
+        <select name="client" [(ngModel)]="selectedClient">
+          <option *ngFor="let client of clients.slice(1)" [value]="client.Name">{{ client.Name }} - {{ client.Description }}</option>
         </select>
       </div>
-
-<!--      Task-->
-      <div>
+      <div class="form-group">
         <label>Task:</label>
-        <select name="task">
-          <option ></option>
+        <select name="task" [(ngModel)]="selectedTask">
+          <option *ngFor="let task of tasks.slice(1)" [value]="task.Name">{{ task.Name }} - {{ task.Description }}</option>
         </select>
       </div>
-
-<!--      Comments-->
-      <div>
+      <div class="form-group">
         <label>Comment:</label>
-        <input type="text" name="t_comment">
+        <input type="text" name="t_comment" [(ngModel)]="comment">
       </div>
-<!--      Start time-->
-      <div>
+      <div class="form-group">
         <label>Start Time:</label>
-        <input type="time" name="t_start">
+        <input type="time" name="t_start" [(ngModel)]="startTime" (ngModelChange)="calculateSpentTime()">
       </div>
-<!--      End time-->
-      <div>
+      <div class="form-group">
         <label>End Time:</label>
-        <input type="time" name="t_end">
+        <input type="time" name="t_end" [(ngModel)]="endTime" (ngModelChange)="calculateSpentTime()">
       </div>
-<!--     Calculated Time-->
-      <div>
+      <div class="form-group">
         <label>Spent Time:</label>
-        <input type="text" name="t_spent" disabled>
+        <span>{{ spentTime }}</span>
       </div>
-
-        <button type="submit">Submit</button>
-
-
+      <button type="submit" class="submit-button" [disabled]="!isFormValid()">Submit</button>
     </form>
   </div>
 </div>

@@ -16,4 +16,83 @@
   border-radius: 25px;
   margin: 10px;
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-section input[type="text"],
+.right-section input[type="time"],
+.right-section input[type="date"],
+.right-section select {
+  border-radius: 15px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: border-color 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 5px auto;
+  text-align: center; /* Center the text */
+}
+
+.right-section input[type="text"]:focus,
+.right-section input[type="time"]:focus,
+.right-section input[type="date"]:focus,
+.right-section select:focus {
+  border-color: green;
+}
+
+.right-section .form-field {
+  margin-bottom: 10px;
+}
+
+.right-section .form-field:last-child {
+  margin-bottom: 0;
+}
+
+.right-section .submit-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.right-section label {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.right-section .radio-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.right-section .radio-container input[type="radio"] {
+  margin: 0 5px;
+}
+
+.right-section span {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.right-section .submit-button {
+  width: 100%;
+  border-radius: 25px;
+  padding: 10px;
+  border: none;
+  outline: none;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+  margin: 10px auto;
+  transition: background-color 0.3s ease;
+}
+
+.right-section .submit-button:hover {
+  background-color: #45a049;
 }

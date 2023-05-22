@@ -12,6 +12,7 @@ export class LoginService {
 
   postInfo(userName:string, password:string){
     let loginData = {'User': userName, 'Password': this.encapsvc.encryptPassword(password,userName)};
+    //console.log(this.encapsvc.encryptPassword(password,userName))
     return this.httpC.post<ServerInterface>(this.apiURL, loginData);
   }
 }

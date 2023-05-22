@@ -17,7 +17,7 @@ import { StandardUserComponent } from './components/standard-user/standard-user.
   imports: [
     RouterModule.forRoot([
       {path: '', component: LoginComponent},
-      {path: 'standardUser', component: StandardUserComponent}
+      {path: 'standardUser/:userid', component: StandardUserComponent}
     ]),
     BrowserModule,
     FormsModule,
