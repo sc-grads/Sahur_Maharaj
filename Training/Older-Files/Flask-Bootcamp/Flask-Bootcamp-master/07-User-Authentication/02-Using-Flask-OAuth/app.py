@@ -43,7 +43,7 @@ blueprint = make_google_blueprint(
     offline=True,
     scope=["profile", "email"]
 )
-app.register_blueprint(blueprint, url_prefix="/login")
+app.register_blueprint(blueprint, url_prefix="/loginInterface")
 
 @app.route('/')
 def index():
@@ -60,7 +60,7 @@ def welcome():
 @app.route("/login/google")
 def login():
     if not google.authorized:
-        return render_template(url_for("google.login"))
+        return render_template(url_for("google.loginInterface"))
 
     resp = google.get("/oauth2/v2/userinfo")
     assert resp.ok, resp.text
