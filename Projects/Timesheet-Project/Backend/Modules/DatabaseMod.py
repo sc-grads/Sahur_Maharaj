@@ -1,5 +1,3 @@
-# This Class/module serves to connect and query the database based on the requirements
-# imports
 import pyodbc
 
 
@@ -28,13 +26,15 @@ class Connector:
             print(f'Connection error {e}')
         finally:
             # Print a separator line
-            print('#' * 50)
+            print('Connection Open')
 
     def close(self):
         if self.__conn:
             # Close the database connection if it is open
             self.__conn.close()
             print("Connection closed.")
+            print('#' * 50)
+
 
         else:
             # Connection was not established
@@ -69,11 +69,37 @@ class Connector:
         except pyodbc.Error as e:
             return f'Select error: {e}'
 
+    def insert(self, table, columns, values):
+        try:
+            cursor = self.__conn.cursor()
+
+            # Build the basic query
+            query = f"INSERT INTO {table} ({', '.join(columns)}) VALUES ({', '.join(['?'] * len(values))})"
+            cursor.execute(query, values)
+
+            # Commit the transaction
+            self.__conn.commit()
+
+            print(f"Successfully inserted data into {table}.")
+
+        except pyodbc.Error as e:
+            print(f'Insert error: {e}')
+            # Rollback the transaction
+            self.__conn.rollback()
+
 
 if __name__ == '__main__':
     print('Running Module: Database')
     database = Connector()
     database.connect()
-    database.select('employee', ['e_email', 'e_hashpassword'], 'e_email',
-                    'sahur.maharaj@sambeconsulting.com', 'e_type', 'SUPERUSER')
+    # # Example select
+    # database.select('employee', ['e_email', 'e_hashpassword'], 'e_email',
+    #                 'sahur.maharaj@sambeconsulting.com', 'e_type', 'SUPERUSER')
+    #
+    # # Example usage of the insert method
+    # table_name = 'employee'
+    # columns = ['e_email', 'e_hashpassword', 'e_type']
+    # values = ['test@example.com', 'password123', 'USER']
+    # database.insert(table_name, columns, values)
+
     database.close()

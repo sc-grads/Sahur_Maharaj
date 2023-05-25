@@ -26,9 +26,10 @@ export class LoginComponent {
       })
     ).subscribe((response: ServerInterface) => {
       this.message = response.message;
+      console.log(response.data.userid);
       console.log(response.data.userStatus);
       if (response.data && response.data.userStatus === 'STANDARD') {
-        this.redirect.navigate(['/standardUser']).then(r => console.log(r));
+        this.redirect.navigate(['/standardUser', response.data.userid],).then(r => console.log(r));
       }
     });
   }

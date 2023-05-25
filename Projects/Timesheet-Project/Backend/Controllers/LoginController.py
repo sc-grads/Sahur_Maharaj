@@ -1,8 +1,8 @@
 import sys
+from flask import jsonify, request, session
 
 sys.path.append('..')
 from Modules.DatabaseMod import Connector
-from flask import jsonify, request
 
 dbm = Connector()
 
@@ -12,15 +12,20 @@ def loginEndpoint():
     password = request.json.get('Password')
 
     dbm.connect()
-    dbmUser = dbm.select('employee', ['e_email', 'e_hashpassword', 'e_type'], 'e_email', user, 'e_hashpassword',
+    dbmUser = dbm.select('employee', ['e_id', 'e_email', 'e_hashpassword', 'e_type'], 'e_email', user, 'e_hashpassword',
                          password)
 
     if dbmUser:
-        userStatus = dbmUser[0][2]
+        userStatus = dbmUser[0][3]
+        userid = dbmUser[0][0]
+
+        session['user_id'] = userid  # Store user ID in the session
+
         response = {
             'status': 200,
             'message': 'Login Successful',
             'data': {
+                'userid': userid,
                 'userStatus': userStatus
             }
         }
