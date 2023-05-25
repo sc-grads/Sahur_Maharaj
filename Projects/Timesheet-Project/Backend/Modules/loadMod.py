@@ -9,12 +9,18 @@ class Loader:
 
     def load_clients(self):
         self.dbm.connect()
-        return self.dbm.select('client', '*', None, None, None, None)
+        clients = self.dbm.select('client', '*', None, None, None, None)
+        self.dbm.close()
+        return clients
 
     def load_tasks(self):
         self.dbm.connect()
-        return self.dbm.select('task', '*', None, None, None, None)
+        tasks = self.dbm.select('task', '*', None, None, None, None)
+        self.dbm.close()
+        return tasks
 
     def load_timesheet(self, user_id):
         self.dbm.connect()
-        return self.dbm.select('employee_timesheet', '*', 'employee_id', user_id, None, None)
+        timesheet = self.dbm.select('timesheet', '*', 'employee_id', user_id, None, None)
+        self.dbm.close()
+        return timesheet

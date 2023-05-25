@@ -11,13 +11,20 @@ def loadendpoint(user_id):
     load_tasks = loader.load_tasks()
     load_clients = loader.load_clients()
     load_timesheet = loader.load_timesheet(user_id)
-    print(load_timesheet)
 
     timesheet = [
         {
-            'empID': times[0],
-            'sheetID':times[1],
-            'totaltime':times[2]
+            'sheet_ID': times[0],
+            'date': times[1],
+            'billable': times[2],
+            'project': times[3],
+            'comment': times[4],
+            'start_time': times[5],
+            'end_time': times[6],
+            'time_spent': times[7],
+            'user_id': times[8],
+            'task_id': times[9],
+            'client_id': times[10]
         }
         for times in load_timesheet
     ]
@@ -40,7 +47,6 @@ def loadendpoint(user_id):
         for client in load_clients
     ]
 
-
     response = {
         'status': 200,
         'message': f'Data sent for user ID {user_id}',
@@ -50,5 +56,4 @@ def loadendpoint(user_id):
             'timesheet': timesheet
         }
     }
-
     return jsonify(response), 200

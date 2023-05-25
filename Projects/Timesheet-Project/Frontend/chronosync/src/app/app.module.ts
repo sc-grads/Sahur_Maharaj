@@ -7,12 +7,14 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {RouterModule} from "@angular/router";
 import { StandardUserComponent } from './components/standard-user/standard-user.component';
+import { TimesheetComponent } from './components/timesheet/timesheet.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    StandardUserComponent
+    StandardUserComponent,
+    TimesheetComponent
   ],
   imports: [
     RouterModule.forRoot([

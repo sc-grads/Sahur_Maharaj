@@ -84,24 +84,17 @@ GO
 CREATE TABLE timesheet(
 	t_id INT PRIMARY KEY IDENTITY(1, 1),
 	t_date DATE NOT NULL,
-	t_billable NVARCHAR(5) CHECK(t_billable = 'true' or t_billable = 'false') NOT NULL,
+	t_billable NVARCHAR(5) CHECK(t_billable = 'True' or t_billable = 'False') NOT NULL,
 	t_project NVARCHAR(50) NOT NULL,
 	t_comment NVARCHAR(MAX) NOT NULL,
-	t_start TIME NOT NULL,
-	t_end TIME NOT NULL,
+	t_start VARCHAR(5) NOT NULL,
+	t_end VARCHAR(5) NOT NULL,
 	t_spent NVARCHAR(8) NOT NULL,
+	employee_id INT FOREIGN KEY REFERENCES employee(e_id) NOT NULL,
 	task_id INT FOREIGN KEY REFERENCES task(t_id) NOT NULL,
 	client_id INT FOREIGN KEY REFERENCES client(c_id) NOT NULL
 )
 PRINT 'CREATED TABLE TIMESHEETS'
-GO
--- Bound Table
-CREATE TABLE employee_timesheet(
-	employee_id INT FOREIGN KEY REFERENCES employee(e_id) NOT NULL,
-	timesheet_id INT FOREIGN KEY REFERENCES timesheet(T_id) NOT NULL,
-	total_time_worked VARCHAR(8) NOT NULL -- total of the timesheet
-)
-PRINT 'CREATED TABLE EMPLOYEES TIMESHEET'
 GO
 
 -- Inserts
@@ -136,54 +129,14 @@ VALUES
   ('Discovery Vitality', 'A wellness and rewards program');
 
 -- timesheet
-INSERT INTO timesheet (t_date, t_billable, t_project, t_comment, t_start, t_end, t_spent, task_id, client_id)
+INSERT INTO timesheet (t_date, t_billable, t_project, t_comment, t_start, t_end, t_spent, employee_id, task_id, client_id)
 VALUES
-	('2023-04-20', 'true', 'Project A', 'Meeting with client', '09:00', '10:30', '01:30:00', 1, 1),
-	('2023-04-21', 'false', 'Project B', 'Debugging code', '14:00', '16:00', '02:00:00', 2, 2);
-
--- bound table
-INSERT INTO employee_timesheet
-VALUES (1, 1, '01:30:00'),(1,2, '02:30:00');
+	('2023-04-20', 'True', 'Project A', 'Meeting with client', '09:00', '10:30', '01H30', 1, 1, 1),
+	('2023-04-21', 'False', 'Project B', 'Debugging code', '14:00', '16:00', '02H00', 1, 2, 2);
 
 -- selects
 select * from task
 select * from employee
 select * from client
 select * from timesheet
-select * from employee_timesheet
 
-SELECT e.e_name, 
-       t.t_date, 
-       t.t_billable, 
-       c.c_name AS client_name, 
-       ta.t_name AS task_name, 
-       t.t_project, 
-       t.t_comment, 
-       t.t_start, 
-       t.t_end, 
-       t.t_spent
-FROM employee e
-JOIN employee_timesheet et ON e.e_id = et.employee_id
-JOIN timesheet t ON et.timesheet_id = t.t_id
-JOIN task ta ON t.task_id = ta.t_id
-JOIN client c ON t.client_id = c.c_id
-
-
-
-SELECT e.e_name, 
-       t.t_date, 
-       t.t_billable, 
-       c.c_name AS client_name, 
-       ta.t_name AS task_name, 
-       t.t_project, 
-       t.t_comment, 
-       t.t_start, 
-       t.t_end, 
-       t.t_spent,
-       CONVERT(varchar(8), DATEADD(minute, SUM(DATEDIFF(minute, '0:00', t.t_spent)), '0:00'), 108) AS total_time_worked
-FROM employee e
-JOIN employee_timesheet et ON e.e_id = et.employee_id
-JOIN timesheet t ON et.timesheet_id = t.t_id
-JOIN task ta ON t.task_id = ta.t_id
-JOIN client c ON t.client_id = c.c_id
-GROUP BY e.e_name, t.t_date, t.t_billable, c.c_name, ta.t_name, t.t_project, t.t_comment, t.t_start, t.t_end, t.t_spent;
