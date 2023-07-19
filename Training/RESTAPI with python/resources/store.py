@@ -1,8 +1,8 @@
 import uuid
 from flask.views import MethodView
 from flask_smorest import Blueprint, abort
-from db import stores
-from schemas import StoreSchema
+from .. db import stores
+from .. schemas import StoreSchema
 
 
 blp = Blueprint("Stores", "stores", description="Operations on stores")
