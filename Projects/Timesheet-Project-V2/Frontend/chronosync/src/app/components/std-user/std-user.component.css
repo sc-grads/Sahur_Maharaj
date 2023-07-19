@@ -1,0 +1,52 @@
+.split-container {
+  display: flex;
+  overflow: hidden;
+}
+
+.left-section,
+.right-section {
+  overflow: auto;
+}
+
+.left-section::-webkit-scrollbar,
+.right-section::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+.left-section::-webkit-scrollbar-thumb,
+.right-section::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+.left-section::-webkit-scrollbar-track,
+.right-section::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.split-container {
+  display: flex;
+}
+.left-section {
+  flex: 0 0 75%;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  background-color: #f0f0f0;
+  border-radius: 25px;
+  margin: 10px;
+  max-height: 79vh;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+.right-section {
+  flex: 1;
+  background-color: #d0d0d0;
+  border-radius: 25px;
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-height: 79vh;
+}

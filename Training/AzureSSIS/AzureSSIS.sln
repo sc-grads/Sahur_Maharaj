@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33815.320
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "AzureSSIS", "AzureSSIS\AzureSSIS.dtproj", "{00847108-7EF2-4D95-A776-CD920D7450D4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Azure|Default = Azure|Default
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{00847108-7EF2-4D95-A776-CD920D7450D4}.Azure|Default.ActiveCfg = Azure
+		{00847108-7EF2-4D95-A776-CD920D7450D4}.Azure|Default.Build.0 = Azure
+		{00847108-7EF2-4D95-A776-CD920D7450D4}.Development|Default.ActiveCfg = Development
+		{00847108-7EF2-4D95-A776-CD920D7450D4}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7D5DCE1C-FE45-473E-A89F-689274270A92}
+	EndGlobalSection
+EndGlobal

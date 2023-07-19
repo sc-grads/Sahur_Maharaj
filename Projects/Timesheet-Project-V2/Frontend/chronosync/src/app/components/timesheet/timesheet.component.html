@@ -1,0 +1,199 @@
+<h1>Timesheet</h1>
+
+<div class="filter-buttons">
+  <button (click)="filterByYear()">Year</button>
+  <button (click)="filterByMonth()">Month</button>
+  <button (click)="filterByDay()">Day</button>
+</div>
+
+<div *ngIf="filterType === 'year'">
+  <h2>Filter: Year</h2>
+  <p>Selected Year:</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Billable</th>
+        <th>Project</th>
+        <th>Client</th>
+        <th>Task</th>
+        <th>Start Time</th>
+        <th>End Time</th>
+        <th>Spent Time</th>
+        <th>Comment</th>
+        <th>Edit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let timesheet of filteredTimesheetData">
+        <td>{{ formatDate(timesheet.date) }}</td>
+        <td>{{ timesheet.billable }}</td>
+        <td>{{ timesheet.project }}</td>
+        <td>{{ timesheet.client_name }}</td>
+        <td>{{ timesheet.task_name }}</td>
+        <td>{{ timesheet.start_time }}</td>
+        <td>{{ timesheet.end_time }}</td>
+        <td>{{ timesheet.time_spent }}</td>
+        <td>{{ timesheet.comment }}</td>
+        <td>
+          <button class="edit-button" (click)="openOverlay(timesheet)">Edit</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div *ngIf="filterType === 'month'">
+  <h2>Filter: Month</h2>
+  <p>Selected Month: </p>
+
+  <div *ngFor="let month of filteredTimesheetData">
+    <h3>{{ month.month }}</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Billable</th>
+          <th>Project</th>
+          <th>Client</th>
+          <th>Task</th>
+          <th>Start Time</th>
+          <th>End Time</th>
+          <th>Spent Time</th>
+          <th>Comment</th>
+          <th>Edit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let timesheet of month.timesheets">
+          <td>{{ formatDate(timesheet.date) }}</td>
+          <td>{{ timesheet.billable }}</td>
+          <td>{{ timesheet.project }}</td>
+          <td>{{ timesheet.client_name }}</td>
+          <td>{{ timesheet.task_name }}</td>
+          <td>{{ timesheet.start_time }}</td>
+          <td>{{ timesheet.end_time }}</td>
+          <td>{{ timesheet.time_spent }}</td>
+          <td>{{ timesheet.comment }}</td>
+          <td>
+            <button class="edit-button" (click)="openOverlay(timesheet)">Edit</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div *ngIf="filterType === 'day'">
+  <h2>Filter: Day</h2>
+  <p>Selected Day: {{ getCurrentDay() }}</p>
+
+  <div *ngFor="let day of filteredTimesheetData">
+    <h3>{{ day.dayOfWeek }}</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Billable</th>
+          <th>Project</th>
+          <th>Client</th>
+          <th>Task</th>
+          <th>Start Time</th>
+          <th>End Time</th>
+          <th>Spent Time</th>
+          <th>Comment</th>
+          <th>Edit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let timesheet of day.timesheets">
+          <td>{{ formatDate(timesheet.date) }}</td>
+          <td>{{ timesheet.billable }}</td>
+          <td>{{ timesheet.project }}</td>
+          <td>{{ timesheet.client_name }}</td>
+          <td>{{ timesheet.task_name }}</td>
+          <td>{{ timesheet.start_time }}</td>
+          <td>{{ timesheet.end_time }}</td>
+          <td>{{ timesheet.time_spent }}</td>
+          <td>{{ timesheet.comment }}</td>
+          <td>
+            <button class="edit-button" (click)="openOverlay(timesheet)">Edit</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="modal" [class.hidden]="!isEditing">
+  <div class="modal-content">
+
+    <!-- Display the selected row data inside the modal -->
+    <h2>Edit Clock</h2>
+    <div class="form-group">
+      <label for="clockId">Clock ID: </label>
+      <input type="text" id="clockId" [(ngModel)]="selectedTimesheet.entry_no" [disabled]="true" />
+    </div>
+    <div class="form-group">
+      <label for="date">Date: </label>
+      <input type="date" id="date" [(ngModel)]="selectedTimesheet.date" />
+    </div>
+    <div class="form-group">
+      <label for="billable">Billable: </label>
+      <select id="billable" [(ngModel)]="selectedTimesheet.billable">
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="project">Project: </label>
+      <input type="text" id="project" [(ngModel)]="selectedTimesheet.project" />
+    </div>
+    <div class="form-group">
+      <label for="client">Client: </label>
+      <select id="client" [(ngModel)]="selectedTimesheet.client_name">
+        <option *ngFor="let client of clientData" [value]="client.Name">{{ client.Name }} - {{ client.Description }}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="task">Task: </label>
+      <select id="task" [(ngModel)]="selectedTimesheet.task_name">
+        <option *ngFor="let task of taskData" [value]="task.Name">{{ task.Name }} - {{ task.Description }}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="startTime">Start Time: </label>
+      <input type="time" id="startTime" [(ngModel)]="selectedTimesheet.start_time" (change)="calculateSpentTime()" />
+    </div>
+    <div class="form-group">
+      <label for="endTime">End Time: </label>
+      <input type="time" id="endTime" [(ngModel)]="selectedTimesheet.end_time" (change)="calculateSpentTime()"/>
+    </div>
+    <div class="form-group">
+      <label for="spentTime">Spent Time: </label>
+      <span id="spentTime">{{spentTime}}</span>
+    </div>
+    <div class="form-group">
+      <label for="comment">Comment: </label>
+      <input type="text" id="comment" [(ngModel)]="selectedTimesheet.comment" />
+    </div>
+    <!-- Add save and cancel buttons for updating the timesheet -->
+    <div class="buttons">
+      <button class="save-button" (click)="saveChanges()">Save</button>
+      <button class="close-button" (click)="closeOverlay()">Close</button>
+    </div>
+  </div>
+</div>
+
+
