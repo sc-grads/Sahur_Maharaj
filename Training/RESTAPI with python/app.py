@@ -59,7 +59,7 @@ def create_app(db_url=None):
                     "error": "fresh_token_required",
                 }
             ),
-            401,
+             401,
         )
 
     @jwt.additional_claims_loader
